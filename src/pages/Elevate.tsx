@@ -81,11 +81,8 @@ export const Elevate = () => {
                             So You Can Get Back More Personal Time!
                         </motion.p>
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.4 }}
-                            className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/10 group cursor-pointer bg-black"
+                        <div
+                            className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/10 group cursor-pointer bg-black hover:scale-[1.01] transition-transform duration-300"
                             onClick={openVideo}
                         >
                             {/* Video Placeholder/Thumbnail - In a real app, use the actual thumbnail */}
@@ -93,18 +90,21 @@ export const Elevate = () => {
                                 <img
                                     src="https://storage.googleapis.com/msgsndr/nSmi03CFhTx89dc3EbIf/media/6728617c975abe47258e1f33.webp"
                                     alt="Video Thumbnail"
-                                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity"
+                                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-300"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).style.display = 'none';
+                                    }}
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                                         <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
                                     </div>
                                 </div>
-                                <div className="absolute bottom-6 bg-black/60 px-4 py-2 rounded-lg backdrop-blur text-white text-sm font-medium">
+                                <div className="absolute bottom-6 bg-black/60 px-4 py-2 rounded-lg backdrop-blur text-white text-sm font-medium z-10">
                                     Don't forget to UN-MUTE the video
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
 
                         <div className="mt-12">
                             <Button size="lg"
@@ -168,7 +168,7 @@ export const Elevate = () => {
                 </section>
 
                 {/* Pricing */}
-                <section id="pricing" className="py-20 bg-background-card border-y border-white/5">
+                <section id="pricing" className="py-20 bg-background-card border-y border-white/5 scroll-mt-24">
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-6">Choose Your Path</h2>
                         <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16">

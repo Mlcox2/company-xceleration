@@ -25,7 +25,7 @@ export const Navbar = () => {
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <a href="#" className="flex items-center gap-2">
+                <a href="/" className="flex items-center gap-2">
                     <img src="/assets/images/logo.png" alt="Xcel Team" className="h-10 w-auto" />
                 </a>
 
