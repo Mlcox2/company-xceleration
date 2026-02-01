@@ -40,7 +40,7 @@ export const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
-                    <Button size="sm">Book Discovery Call</Button>
+                    <Button size="sm" onClick={() => window.open('https://calendly.com/company-xceleration', '_blank')}>Book Discovery Call</Button>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -72,7 +72,7 @@ export const Navbar = () => {
                                     {link.name}
                                 </a>
                             ))}
-                            <Button fullWidth>Book Discovery Call</Button>
+                            <Button fullWidth onClick={() => window.open('https://calendly.com/company-xceleration', '_blank')}>Book Discovery Call</Button>
                         </div>
                     </motion.div>
                 )}

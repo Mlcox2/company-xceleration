@@ -107,7 +107,10 @@ export const Elevate = () => {
                         </motion.div>
 
                         <div className="mt-12">
-                            <Button size="lg" className="w-full md:w-auto text-xl px-12 py-6 shadow-[0_0_30px_rgba(249,115,22,0.5)] animate-pulse">
+                            <Button size="lg"
+                                className="w-full md:w-auto text-xl px-12 py-6 shadow-[0_0_30px_rgba(249,115,22,0.5)] animate-pulse"
+                                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                            >
                                 DON'T WAIT - TAKE CONTROL NOW!
                             </Button>
                         </div>
@@ -165,7 +168,7 @@ export const Elevate = () => {
                 </section>
 
                 {/* Pricing */}
-                <section className="py-20 bg-background-card border-y border-white/5">
+                <section id="pricing" className="py-20 bg-background-card border-y border-white/5">
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-6">Choose Your Path</h2>
                         <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16">

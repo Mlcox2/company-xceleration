@@ -1,8 +1,19 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './Button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play, X } from 'lucide-react';
 
 export const Hero = () => {
+    const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+    const openVideo = () => setIsVideoModalOpen(true);
+    const closeVideo = () => setIsVideoModalOpen(false);
+
+    const handleBooking = () => {
+        // TODO: Replace with actual booking URL
+        window.open('https://calendly.com/company-xceleration', '_blank');
+    };
+
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#000d23]">
             {/* Background Image with Overlay */}
@@ -34,11 +45,11 @@ export const Hero = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <Button size="lg" className="group">
+                        <Button size="lg" className="group" onClick={handleBooking}>
                             Book A Free Discovery Call
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
-                        <Button variant="secondary" size="lg">
+                        <Button variant="secondary" size="lg" onClick={() => window.location.href = '/elevate'}>
                             Take Free Assessment
                         </Button>
                     </div>
@@ -52,16 +63,55 @@ export const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative hidden lg:block"
+                    className="relative hidden lg:block group cursor-pointer"
+                    onClick={openVideo}
                 >
-                    <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-3xl" />
-                    <img
-                        src="/assets/images/hero-graphic.jpg"
-                        alt="Dashboard Preview"
-                        className="relative rounded-2xl shadow-2xl border border-white/10"
-                    />
+                    <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-3xl group-hover:bg-primary/30 transition-colors" />
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                        <img
+                            src="/assets/images/hero-graphic.jpg"
+                            alt="Dashboard Preview"
+                            className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
+                            <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm group-hover:scale-110 transition-transform">
+                                <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
+                            </div>
+                        </div>
+                    </div>
                 </motion.div>
             </div>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {isVideoModalOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm p-4"
+                        onClick={closeVideo}
+                    >
+                        <button
+                            onClick={closeVideo}
+                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
+                        >
+                            <X size={32} />
+                        </button>
+                        <div
+                            className="w-full max-w-5xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-white/10"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <video
+                                src="https://storage.googleapis.com/msgsndr/nSmi03CFhTx89dc3EbIf/media/6728624d975abe0af88e2074.mp4"
+                                controls
+                                autoPlay
+                                className="w-full h-full"
+                            />
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
