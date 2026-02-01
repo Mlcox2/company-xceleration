@@ -1,10 +1,30 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './Button';
-import { Target, Users, Layout, ArrowRight } from 'lucide-react';
+import { Target, Users, Layout, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'; // Added icons
 import { TEAM_MEMBERS } from '../data/teamMembers';
 
 export const Solution = () => {
-    const kimRiggs = TEAM_MEMBERS.find(m => m.name === 'Kim Riggs');
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Auto-rotate every 8 seconds
+    useEffect(() => {
+        const timer = setInterval(() => {
+            handleNext();
+        }, 8000);
+        return () => clearInterval(timer);
+    }, [currentIndex]);
+
+    const handleNext = () => {
+        setCurrentIndex((prev) => (prev + 1) % TEAM_MEMBERS.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentIndex((prev) => (prev - 1 + TEAM_MEMBERS.length) % TEAM_MEMBERS.length);
+    };
+
+    const currentMember = TEAM_MEMBERS[currentIndex]; // Use the generic current member
+
     const steps = [
         {
             title: "Clarify the Plan",
@@ -62,41 +82,62 @@ export const Solution = () => {
                     </div>
                 </div>
 
-                {/* Kim Riggs Feature */}
-                {kimRiggs && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                        className="mt-24 p-8 md:p-12 rounded-2xl bg-gradient-to-br from-background via-background-card to-primary/5 border border-white/5"
-                    >
-                        <div className="flex flex-col md:flex-row items-center gap-12">
-                            <div className="w-full md:w-1/3 shrink-0">
-                                <div className="relative aspect-[3/4] md:aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                                    <img
-                                        src={kimRiggs.image}
-                                        alt={kimRiggs.name}
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                    <div className="absolute bottom-0 left-0 p-6">
-                                        <h3 className="text-2xl font-bold text-white font-heading">{kimRiggs.name}</h3>
-                                        <p className="text-primary font-medium">{kimRiggs.role}</p>
+                {/* Team Carousel Feature */}
+                <div className="mt-24 relative">
+                    <div className="bg-gradient-to-br from-background via-background-card to-primary/5 border border-white/5 rounded-2xl overflow-hidden relative">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={currentIndex}
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -20 }}
+                                transition={{ duration: 0.5 }}
+                                className="p-8 md:p-12"
+                            >
+                                <div className="flex flex-col md:flex-row items-center gap-12">
+                                    <div className="w-full md:w-1/3 shrink-0">
+                                        <div className="relative aspect-[3/4] md:aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                                            <img
+                                                src={currentMember.image}
+                                                alt={currentMember.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                            <div className="absolute bottom-0 left-0 p-6">
+                                                <h3 className="text-2xl font-bold text-white font-heading">{currentMember.name}</h3>
+                                                <p className="text-primary font-medium">{currentMember.role}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="w-full md:w-2/3">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-heading">
+                                            Meet Our Experts
+                                        </h3>
+                                        <div className="space-y-4 text-text-secondary leading-relaxed text-lg h-[300px] overflow-y-auto pr-4 custom-scrollbar">
+                                            <p>{currentMember.bio || currentMember.shortBio}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="w-full md:w-2/3">
-                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-heading">
-                                    Expert Leadership in Health Programs
-                                </h3>
-                                <div className="space-y-4 text-text-secondary leading-relaxed text-lg">
-                                    <p>{kimRiggs.bio}</p>
-                                </div>
-                            </div>
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* Controls */}
+                        <div className="absolute bottom-6 right-6 flex gap-4 z-20">
+                            <button
+                                onClick={handlePrev}
+                                className="p-3 rounded-full bg-white/5 hover:bg-primary border border-white/10 text-white transition-colors"
+                            >
+                                <ChevronLeft size={24} />
+                            </button>
+                            <button
+                                onClick={handleNext}
+                                className="p-3 rounded-full bg-white/5 hover:bg-primary border border-white/10 text-white transition-colors"
+                            >
+                                <ChevronRight size={24} />
+                            </button>
                         </div>
-                    </motion.div>
-                )}
+                    </div>
+                </div>
             </div>
         </section>
     );
