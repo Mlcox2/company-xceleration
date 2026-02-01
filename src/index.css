@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary-light: #fb923c;
+        --color-primary: #f97316;
+        --color-primary-dark: #c2410c;
+        --color-bg: #0f172a;
+        --color-card: #1e293b;
+        --color-text: #f8fafc;
+        --color-text-secondary: #94a3b8;
+    }
+
+    body {
+        @apply bg-background text-text-primary antialiased font-body;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading tracking-tight;
+    }
+}
