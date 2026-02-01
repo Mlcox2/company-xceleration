@@ -29,9 +29,6 @@ export const TeamMember = ({ name, role, image, delay, bio, shortBio }: { name: 
 );
 
 export const Team = () => {
-    // Filter for the leaders for the home page (Matthew, Dan)
-    const leaders = TEAM_MEMBERS.filter(m => m.name.includes('Matthew') || m.name.includes('Dan'));
-
     return (
         <section id="team" className="py-24 bg-background">
             <div className="container mx-auto px-6">
@@ -42,11 +39,11 @@ export const Team = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-center gap-12 md:gap-20 max-w-5xl mx-auto">
-                    {leaders.map((leader, index) => (
-                        <div key={leader.name} className="w-full md:w-1/3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
+                    {TEAM_MEMBERS.map((member, index) => (
+                        <div key={member.name} className="w-full">
                             <TeamMember
-                                {...leader}
+                                {...member}
                                 delay={0.1 * (index + 1)}
                             />
                         </div>
