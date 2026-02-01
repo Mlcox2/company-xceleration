@@ -13,8 +13,6 @@ export const Footer = () => {
                             Company Xceleration - Your Scaling Partners. Let’s build a business that runs — even when you’re not in the room.
                         </p>
                         <div className="text-sm text-text-secondary space-y-2">
-                            <p>3410 W 2490 S Hurricane, Utah, 84737</p>
-                            <p>+1 866-790-3896</p>
                             <p>mail@xcel.team</p>
                         </div>
                     </div>
