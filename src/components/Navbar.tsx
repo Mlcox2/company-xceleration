@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from './Button';
@@ -16,9 +16,10 @@ export const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Our Process', href: '#process' },
-        { name: 'Team', href: '#team' },
-        { name: 'Testimonials', href: '#testimonials' },
+        { name: 'Our Process', href: '/#process' },
+        { name: 'Team', href: '/#team' },
+        { name: 'Testimonials', href: '/#testimonials' },
+        { name: 'Elevate', href: '/elevate' },
     ];
 
     return (

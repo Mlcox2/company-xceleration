@@ -1,24 +1,16 @@
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { LogoCloud } from './components/LogoCloud';
-import { PainPoints } from './components/PainPoints';
-import { Solution } from './components/Solution';
-import { Team } from './components/Team';
-import { Footer } from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Elevate } from './pages/Elevate';
 
 function App() {
     return (
-        <div className="bg-background min-h-screen text-text-primary selection:bg-primary/30">
-            <Navbar />
-            <main>
-                <Hero />
-                <LogoCloud />
-                <PainPoints />
-                <Solution />
-                <Team />
-            </main>
-            <Footer />
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/elevate" element={<Elevate />} />
+                <Route path="/1-page" element={<Elevate />} /> {/* Alias for the original URL just in case */}
+            </Routes>
+        </Router>
     )
 }
 

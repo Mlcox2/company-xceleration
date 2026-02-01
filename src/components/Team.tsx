@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
+import { TEAM_MEMBERS } from '../data/teamMembers';
 
-const TeamMember = ({ name, role, image, delay }: { name: string, role: string, image: string, delay: number }) => (
+export const TeamMember = ({ name, role, image, delay, bio, shortBio }: { name: string, role: string, image: string, delay: number, bio?: string, shortBio?: string }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,11 +21,17 @@ const TeamMember = ({ name, role, image, delay }: { name: string, role: string, 
             </div>
         </div>
         <h3 className="text-2xl font-bold mb-1 text-white text-center font-heading">{name}</h3>
-        <p className="text-primary font-medium text-center">{role}</p>
+        <p className="text-primary font-medium text-center mb-2">{role}</p>
+        <p className="text-text-secondary text-sm text-center leading-relaxed line-clamp-4">
+            {shortBio || bio}
+        </p>
     </motion.div>
 );
 
 export const Team = () => {
+    // Filter for the leaders for the home page (Matthew, Dan)
+    const leaders = TEAM_MEMBERS.filter(m => m.name.includes('Matthew') || m.name.includes('Dan'));
+
     return (
         <section id="team" className="py-24 bg-background">
             <div className="container mx-auto px-6">
@@ -35,24 +42,15 @@ export const Team = () => {
                     </p>
                 </div>
 
-                {/* Removed Dr. JD Bock as requested, Centering Matthew and Dan */}
                 <div className="flex flex-col md:flex-row justify-center gap-12 md:gap-20 max-w-5xl mx-auto">
-                    <div className="w-full md:w-1/3">
-                        <TeamMember
-                            name="Matthew Cox, MPA, HonD"
-                            role="Leadership coach, communicator, and growth consultant."
-                            image="/assets/images/matthew-cox.webp"
-                            delay={0.1}
-                        />
-                    </div>
-                    <div className="w-full md:w-1/3">
-                        <TeamMember
-                            name="Dan Cox"
-                            role="Operations and execution strategist with deep roots in human services."
-                            image="/assets/images/dan-cox.jpg"
-                            delay={0.2}
-                        />
-                    </div>
+                    {leaders.map((leader, index) => (
+                        <div key={leader.name} className="w-full md:w-1/3">
+                            <TeamMember
+                                {...leader}
+                                delay={0.1 * (index + 1)}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
