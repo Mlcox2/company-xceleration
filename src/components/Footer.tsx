@@ -21,12 +21,9 @@ export const Footer = () => {
                         <h4 className="font-bold text-lg mb-6 text-white font-heading">SUBSCRIBE TO OUR NEWSLETTER</h4>
                         <p className="text-text-secondary mb-4 text-sm">We go deep every Tuesday with Tools & Tips to help you level up.</p>
                         <div className="flex gap-2 max-w-md">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="bg-background-card border border-white/10 rounded-lg px-4 py-3 w-full focus:outline-none focus:border-primary transition-colors text-white"
-                            />
-                            <Button>Subscribe Now!</Button>
+                            <Button onClick={() => window.open('https://companyxceleration.beehiiv.com/', '_blank')}>
+                                Subscribe Now!
+                            </Button>
                         </div>
                     </div>
                 </div>
