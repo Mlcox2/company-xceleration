@@ -14,13 +14,13 @@ export const Assessment = () => {
     const [answers, setAnswers] = useState<Record<number, string>>({});
     const [isAnalyzing, setIsAnalyzing] = useState(false);
 
-    const handleOptionSelect = (value: string) => {
-        setAnswers(prev => ({ ...prev, [surveyQuestions[currentStep].id]: value }));
+    const handleOptionSelect = (text: string) => {
+        setAnswers(prev => ({ ...prev, [surveyQuestions[currentStep].id]: text }));
 
         if (currentStep < surveyQuestions.length - 1) {
             setTimeout(() => setCurrentStep(prev => prev + 1), 300);
         } else {
-            finishAssessment({ ...answers, [surveyQuestions[currentStep].id]: value });
+            finishAssessment({ ...answers, [surveyQuestions[currentStep].id]: text });
         }
     };
 
@@ -36,10 +36,17 @@ export const Assessment = () => {
         const scoreableIds = [1, 2, 3, 5, 6, 7]; // Q4 is Category, Q8 is Pref
 
         scoreableIds.forEach(id => {
-            const val = finalAnswers[id];
-            if (val === 'Hot') score += 2;
-            else if (val === 'Warm') score += 1;
-            // Cold = 0
+            const answerText = finalAnswers[id];
+            // Find the question and selected option to get the underlying value ('Hot'/'Warm'/'Cold')
+            const question = surveyQuestions.find(q => q.id === id);
+            const selectedOption = question?.options.find(o => o.text === answerText);
+
+            if (selectedOption) {
+                const val = selectedOption.value;
+                if (val === 'Hot') score += 2;
+                else if (val === 'Warm') score += 1;
+                // Cold = 0
+            }
         });
 
         let temperature: Temperature = 'Cold';
@@ -49,6 +56,7 @@ export const Assessment = () => {
         else temperature = 'Cold';
 
         // Get Category
+        // For Q4, text equals value, so using the text is fine.
         const category = finalAnswers[4] as Category;
 
         return { category, temperature };
@@ -125,16 +133,16 @@ export const Assessment = () => {
                                     {currentQuestion.options.map((option, idx) => (
                                         <button
                                             key={idx}
-                                            onClick={() => handleOptionSelect(option.value)}
+                                            onClick={() => handleOptionSelect(option.text)}
                                             className={`w-full text-left p-6 rounded-xl border transition-all duration-200 flex items-center justify-between group
-                                                ${answers[currentQuestion.id] === option.value
+                                                ${answers[currentQuestion.id] === option.text
                                                     ? 'bg-primary/20 border-primary text-white shadow-[0_0_15px_rgba(249,115,22,0.3)]'
                                                     : 'bg-white/5 border-white/10 text-text-secondary hover:bg-white/10 hover:border-white/20 hover:text-white'
                                                 }
                                             `}
                                         >
                                             <span className="text-lg">{option.text}</span>
-                                            {answers[currentQuestion.id] === option.value && (
+                                            {answers[currentQuestion.id] === option.text && (
                                                 <CheckCircle2 className="text-primary w-6 h-6" />
                                             )}
                                         </button>
