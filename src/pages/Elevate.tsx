@@ -14,9 +14,10 @@ interface TierProps {
     features: string[];
     popular?: boolean;
     note?: string;
+    link?: string;
 }
 
-const PricingTier = ({ name, price, target, features, popular, note }: TierProps) => (
+const PricingTier = ({ name, price, target, features, popular, note, link }: TierProps) => (
     <div className={`relative p-8 rounded-2xl border ${popular ? 'border-primary bg-primary/5' : 'border-white/10 bg-background-card'} flex flex-col h-full`}>
         {popular && (
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
@@ -25,7 +26,7 @@ const PricingTier = ({ name, price, target, features, popular, note }: TierProps
         )}
         <h3 className="text-2xl font-bold text-white mb-2">{name}</h3>
         <div className="text-4xl font-bold text-primary mb-2">{price}</div>
-        {note && <p className="text-xs text-text-secondary mb-4 italic">{note}</p>}
+        {note && <p className="text-xs text-text-secondary mb-4 italic whitespace-pre-line">{note}</p>}
         <p className="text-text-secondary mb-6">{target}</p>
         <div className="flex-1 space-y-4 mb-8">
             {features.map((feat, idx) => (
@@ -35,7 +36,11 @@ const PricingTier = ({ name, price, target, features, popular, note }: TierProps
                 </div>
             ))}
         </div>
-        <Button variant={popular ? 'primary' : 'outline'} className="w-full" onClick={() => window.location.href = '/booking'}>
+        <Button
+            variant={popular ? 'primary' : 'outline'}
+            className="w-full"
+            onClick={() => link ? window.open(link, '_blank') : window.location.href = '/booking'}
+        >
             Get Started
         </Button>
     </div>
@@ -201,10 +206,11 @@ export const Elevate = () => {
                                 ]}
                             />
                             <PricingTier
-                                name="Pinnacle Tier"
+                                name="BLOOM Growth System"
                                 price="$2,999/mo"
-                                note="*Requires $8999 engagement fee"
+                                note={`$8,999 Engagement Fee (One-time via ACH)\nMonthly Subscription starts after 90 days`}
                                 target="Advanced practices aiming for long-term strategic success."
+                                link="https://buy.stripe.com/dRmcN70Jy9Gb2e02r3aMU00"
                                 features={[
                                     "All benefits of Foundation and Growth",
                                     "Comprehensive strategic planning",
