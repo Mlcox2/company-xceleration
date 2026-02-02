@@ -19,6 +19,7 @@ export const Navbar = () => {
         { name: 'Our Process', href: '/#process' },
         { name: 'Team', href: '/team' },
         { name: 'Speakers', href: '/speakers' },
+        { name: 'Resources', href: '/resources' },
         { name: 'Testimonials', href: '/testimonials' },
         { name: 'Elevate', href: '/elevate' },
     ];

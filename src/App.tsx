@@ -7,6 +7,7 @@ import { Booking } from './pages/Booking';
 import { TestimonialsPage } from './pages/TestimonialsPage';
 import { TeamPage } from './pages/TeamPage';
 import { SpeakersPage } from './pages/SpeakersPage';
+import { ResourcesPage } from './pages/ResourcesPage';
 import { Assessment } from './pages/Assessment';
 import { AssessmentResult } from './pages/AssessmentResult';
 import { assessmentResults } from './data/assessmentContent';
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/testimonials" element={<TestimonialsPage />} />
                     <Route path="/team" element={<TeamPage />} />
                     <Route path="/speakers" element={<SpeakersPage />} />
+                    <Route path="/resources" element={<ResourcesPage />} />
 
                     {/* Assessment Routes */}
                     <Route path="/assessment" element={<Assessment />} />
