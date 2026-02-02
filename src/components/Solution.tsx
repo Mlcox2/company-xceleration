@@ -100,7 +100,7 @@ export const Solution = () => {
                                             <img
                                                 src={currentMember.image}
                                                 alt={currentMember.name}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover grayscale"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                             <div className="absolute bottom-0 left-0 p-6">

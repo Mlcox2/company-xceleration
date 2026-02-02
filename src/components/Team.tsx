@@ -11,7 +11,7 @@ export const TeamMember = ({ name, role, image, delay, bio, shortBio }: { name: 
         className="group relative max-w-sm mx-auto"
     >
         <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-6 border border-white/10">
-            <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src={image} alt={name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div className="flex gap-4">
                     <a href="#" className="p-2 bg-white/20 hover:bg-white text-white hover:text-black rounded-lg backdrop-blur-sm transition-colors">
