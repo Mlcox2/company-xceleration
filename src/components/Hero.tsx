@@ -9,10 +9,7 @@ export const Hero = () => {
     const openVideo = () => setIsVideoModalOpen(true);
     const closeVideo = () => setIsVideoModalOpen(false);
 
-    const handleBooking = () => {
-        // TODO: Replace with actual booking URL
-        window.open('https://calendly.com/company-xceleration', '_blank');
-    };
+
 
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#000d23]">
@@ -45,7 +42,7 @@ export const Hero = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <Button size="lg" className="group" onClick={handleBooking}>
+                        <Button size="lg" className="group" onClick={() => window.location.href = '/booking'}>
                             Book A Free Discovery Call
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
