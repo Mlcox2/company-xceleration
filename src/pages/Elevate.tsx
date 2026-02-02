@@ -193,10 +193,11 @@ export const Elevate = () => {
                                 ]}
                             />
                             <PricingTier
-                                name="Growth Tier"
+                                name="BLOOM Growth System"
                                 price="$1,499/mo"
                                 popular={true}
                                 target="Established practices ready to scale and refine operations."
+                                link="https://buy.stripe.com/cNi8wR63S2dJbOA4zbaMU01"
                                 features={[
                                     "All Foundation Tier benefits",
                                     "Intimate group settings",
