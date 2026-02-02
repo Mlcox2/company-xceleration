@@ -26,49 +26,9 @@ export const Solution = () => {
     return (
         <section className="py-24 bg-background-card border-y border-white/5">
             <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-                    <div>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white font-heading">
-                            Here’s how our process works:
-                        </h2>
-                        <p className="text-xl text-text-secondary mb-8">
-                            Stop guessing. Start executing with a proven operating system designed for 7 and 8-figure agencies.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Button size="lg" className="group" onClick={() => window.location.href = '/booking'}>
-                                Book A Free Discovery Call
-                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </Button>
-                            <Button variant="outline" size="lg" onClick={() => window.location.href = '/assessment'}>
-                                Take Free Assessment
-                            </Button>
-                        </div>
-                    </div>
-
-                    <div className="space-y-6">
-                        {steps.map((step, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.2 }}
-                                className="flex items-start gap-6 p-6 rounded-xl bg-background border border-white/5 hover:border-primary/30 transition-colors"
-                            >
-                                <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                                    <step.icon size={24} />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
-                                    <p className="text-text-secondary leading-relaxed">{step.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
 
                 {/* Team Section - Stacked List */}
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto mb-24">
                     <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-16 font-heading">
                         Meet Our Experts
                     </h2>
@@ -110,6 +70,48 @@ export const Solution = () => {
                         ))}
                     </div>
                 </div>
+
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white font-heading">
+                            Here’s how our process works:
+                        </h2>
+                        <p className="text-xl text-text-secondary mb-8">
+                            Stop guessing. Start executing with a proven operating system designed for 7 and 8-figure agencies.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Button size="lg" className="group" onClick={() => window.location.href = '/booking'}>
+                                Book A Free Discovery Call
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                            <Button variant="outline" size="lg" onClick={() => window.location.href = '/assessment'}>
+                                Take Free Assessment
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="space-y-6">
+                        {steps.map((step, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.2 }}
+                                className="flex items-start gap-6 p-6 rounded-xl bg-background border border-white/5 hover:border-primary/30 transition-colors"
+                            >
+                                <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                                    <step.icon size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
+                                    <p className="text-text-secondary leading-relaxed">{step.desc}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </section>
     );
