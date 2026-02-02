@@ -27,6 +27,8 @@ export const Footer = () => {
                             <a href="/elevate#foundation" className="hover:text-primary transition-colors">BLOOM Foundation Tier</a>
                             <a href="/elevate#growth" className="hover:text-primary transition-colors">BLOOM Growth System</a>
                             <a href="/elevate#systems" className="hover:text-primary transition-colors">BLOOM Strategic System</a>
+                            <div className="h-px bg-white/5 my-1" />
+                            <a href="/faq" className="hover:text-primary transition-colors">Frequently Asked Questions</a>
                         </div>
                     </div>
 
