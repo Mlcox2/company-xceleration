@@ -15,10 +15,11 @@ interface TierProps {
     popular?: boolean;
     note?: string;
     link?: string;
+    id?: string;
 }
 
-const PricingTier = ({ name, price, target, features, popular, note, link }: TierProps) => (
-    <div className={`relative p-8 rounded-2xl border ${popular ? 'border-primary bg-primary/5' : 'border-white/10 bg-background-card'} flex flex-col h-full`}>
+const PricingTier = ({ name, price, target, features, popular, note, link, id }: TierProps) => (
+    <div id={id} className={`relative p-8 rounded-2xl border ${popular ? 'border-primary bg-primary/5' : 'border-white/10 bg-background-card'} flex flex-col h-full scroll-mt-32`}>
         {popular && (
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
                 MOST POPULAR
@@ -182,6 +183,7 @@ export const Elevate = () => {
 
                         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             <PricingTier
+                                id="foundation"
                                 name="BLOOM Foundation Tier"
                                 price="$499/mo"
                                 target="Professionals starting out or seeking a strong base."
@@ -194,6 +196,7 @@ export const Elevate = () => {
                                 ]}
                             />
                             <PricingTier
+                                id="growth"
                                 name="BLOOM Growth System"
                                 price="$1,499/mo"
                                 popular={true}
@@ -208,6 +211,7 @@ export const Elevate = () => {
                                 ]}
                             />
                             <PricingTier
+                                id="systems"
                                 name="BLOOM Growth System"
                                 price="$2,999/mo"
                                 note={`$8,999 Engagement Fee (One-time via ACH)\nMonthly Subscription starts after 90 days`}
