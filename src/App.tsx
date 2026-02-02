@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Elevate } from './pages/Elevate';
 import { Booking } from './pages/Booking';
 import { TestimonialsPage } from './pages/TestimonialsPage';
+import { TeamPage } from './pages/TeamPage';
 import { Assessment } from './pages/Assessment';
 import { AssessmentResult } from './pages/AssessmentResult';
 import { assessmentResults } from './data/assessmentContent';
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/1-page" element={<Elevate />} /> {/* Alias for the original URL just in case */}
                     <Route path="/booking" element={<Booking />} />
                     <Route path="/testimonials" element={<TestimonialsPage />} />
+                    <Route path="/team" element={<TeamPage />} />
 
                     {/* Assessment Routes */}
                     <Route path="/assessment" element={<Assessment />} />

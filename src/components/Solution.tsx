@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Button } from './Button';
-import { Target, Users, Layout, ArrowRight, Linkedin } from 'lucide-react';
+import { Target, Users, Layout, ArrowRight } from 'lucide-react';
 import { TEAM_MEMBERS } from '../data/teamMembers';
 
 export const Solution = () => {
@@ -24,16 +24,16 @@ export const Solution = () => {
     ];
 
     return (
-        <section className="py-24 bg-background-card border-y border-white/5">
+        <section id="process" className="py-24 bg-background-card border-y border-white/5">
             <div className="container mx-auto px-6">
 
-                {/* Team Section - Stacked List */}
-                <div className="max-w-4xl mx-auto mb-24">
+                {/* Team Section - Grid with links */}
+                <div className="mb-32">
                     <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-16 font-heading">
                         Meet Our Experts
                     </h2>
 
-                    <div className="space-y-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                         {TEAM_MEMBERS.map((member, index) => (
                             <motion.div
                                 key={member.name}
@@ -41,36 +41,30 @@ export const Solution = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="flex flex-col md:flex-row gap-8 items-start bg-background border border-white/5 p-8 rounded-2xl"
+                                className="group bg-background border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-all text-center"
                             >
-                                <div className="w-full md:w-1/3 shrink-0">
-                                    <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-white/10">
-                                        <img
-                                            src={member.image}
-                                            alt={member.name}
-                                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                                        />
-                                        {member.linkedin && (
-                                            <div className="absolute bottom-4 right-4">
-                                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-white text-black rounded-lg hover:bg-primary hover:text-white transition-colors block">
-                                                    <Linkedin size={20} />
-                                                </a>
-                                            </div>
-                                        )}
-                                    </div>
+                                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                    />
                                 </div>
-                                <div className="w-full md:w-2/3">
-                                    <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                                    <p className="text-primary font-medium mb-6 uppercase tracking-wider text-sm">{member.role}</p>
-                                    <div className="text-text-secondary leading-relaxed whitespace-pre-wrap">
-                                        {member.bio}
-                                    </div>
-                                </div>
+                                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+                                <p className="text-primary font-medium text-sm mb-6 uppercase tracking-wider">{member.role}</p>
+
+                                <a
+                                    href="/team"
+                                    className="inline-flex items-center text-text-secondary hover:text-white transition-colors text-sm font-medium"
+                                >
+                                    View Full Bio <ArrowRight className="ml-1 w-4 h-4" />
+                                </a>
                             </motion.div>
                         ))}
                     </div>
                 </div>
 
+                {/* Our Process Section */}
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white font-heading">

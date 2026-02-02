@@ -17,7 +17,7 @@ export const Navbar = () => {
 
     const navLinks = [
         { name: 'Our Process', href: '/#process' },
-        { name: 'Team', href: '/#team' },
+        { name: 'Team', href: '/team' },
         { name: 'Testimonials', href: '/testimonials' },
         { name: 'Elevate', href: '/elevate' },
     ];
