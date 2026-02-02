@@ -25,7 +25,7 @@ export const Booking = () => {
                     <h1 className="text-4xl font-bold text-white text-center mb-8 font-heading">Schedule Your Discovery Call</h1>
                     <div
                         className="calendly-inline-widget w-full rounded-lg overflow-hidden"
-                        data-url="https://calendly.com/matthew-xcel"
+                        data-url="https://calendly.com/matthew-xcel/30min"
                         style={{ minWidth: '320px', height: '700px' }}
                     />
                 </div>

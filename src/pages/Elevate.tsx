@@ -35,7 +35,7 @@ const PricingTier = ({ name, price, target, features, popular, note }: TierProps
                 </div>
             ))}
         </div>
-        <Button variant={popular ? 'primary' : 'outline'} className="w-full">
+        <Button variant={popular ? 'primary' : 'outline'} className="w-full" onClick={() => window.location.href = '/booking'}>
             Get Started
         </Button>
     </div>
@@ -246,7 +246,7 @@ export const Elevate = () => {
                             <p>Every day you wait is money lost in denied claims and operational chaos.</p>
                             <p className="text-white font-medium">Stop the bleeding. Start the healing.</p>
                         </div>
-                        <Button size="lg" className="text-lg px-12">
+                        <Button size="lg" className="text-lg px-12" onClick={() => window.location.href = '/booking'}>
                             Join The Elevate Program
                         </Button>
                     </div>
