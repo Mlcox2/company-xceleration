@@ -1,3 +1,4 @@
+
 export interface TeamMember {
     name: string;
     role: string;
@@ -30,6 +31,12 @@ export const TEAM_MEMBERS: TeamMember[] = [
         linkedin: "https://www.linkedin.com/in/kim-riggs-935baa3a4"
     },
     {
+        name: "Sharon Laney",
+        role: "Consultant & Expert Witness",
+        image: "/assets/images/sharon-laney.jpg",
+        bio: "Sharon Laney has more than 30 years of experience in mental health and therapeutic services. She has opened and led numerous treatment programs and therapeutic schools across the country. She holds a master’s degree in Counseling Psychology and was a founding member and past president of the National Association of Therapeutic Schools and Programs. Sharon has served as COO for a large mental health organization and has worked across every level of programming and operations. Her prior work includes leadership and consulting roles with Auldern Academy, Three Springs, Lakehouse Academy, Sedona Sky Academy, Lake Tahoe Prep, and others. Sharon now works as a consultant supporting mental health organizations with operations, compliance, and standards of care. She also serves as an expert witness through Expertiq, advising on complex legal and clinical matters. Her focus centers on strengthening operations, improving quality of care, and passing forward hard-earned lessons from decades in the field."
+    },
+    {
         name: "Kirsten Carl",
         role: "Implementation Specialist",
         image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/nSmi03CFhTx89dc3EbIf/media/69596cec748303ba11df3c3a.jpeg",
@@ -40,11 +47,5 @@ export const TEAM_MEMBERS: TeamMember[] = [
         role: "Billing Specialist",
         image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/nSmi03CFhTx89dc3EbIf/media/69596e2374830341e1df7454.jpeg",
         bio: "Tezia is the Billing and Auditing Specialist for Company Xcelerations with a focus on accuracy, compliance, and process improvement. She manages the billing process and reviews, audits, and financial documentation while collaborating closely with internal teams to support efficient and transparent consulting operations."
-    },
-    {
-        name: "Sharon Laney",
-        role: "Consultant & Expert Witness",
-        image: "/assets/images/sharon-laney.jpg",
-        bio: "Sharon Laney has more than 30 years of experience in mental health and therapeutic services. She has opened and led numerous treatment programs and therapeutic schools across the country. She holds a master’s degree in Counseling Psychology and was a founding member and past president of the National Association of Therapeutic Schools and Programs. Sharon has served as COO for a large mental health organization and has worked across every level of programming and operations. Her prior work includes leadership and consulting roles with Auldern Academy, Three Springs, Lakehouse Academy, Sedona Sky Academy, Lake Tahoe Prep, and others. Sharon now works as a consultant supporting mental health organizations with operations, compliance, and standards of care. She also serves as an expert witness through Expertiq, advising on complex legal and clinical matters. Her focus centers on strengthening operations, improving quality of care, and passing forward hard-earned lessons from decades in the field."
     }
 ];
