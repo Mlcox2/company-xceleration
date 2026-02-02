@@ -1,6 +1,5 @@
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
-import { LogoCloud } from '../components/LogoCloud';
 import { PainPoints } from '../components/PainPoints';
 import { Solution } from '../components/Solution';
 import { Team } from '../components/Team';
@@ -12,7 +11,6 @@ export const Home = () => {
             <Navbar />
             <main>
                 <Hero />
-                <LogoCloud />
                 <PainPoints />
                 <Solution />
                 <Team />
