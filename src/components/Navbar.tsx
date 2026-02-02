@@ -42,7 +42,10 @@ export const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
-                    <Button size="sm" onClick={() => window.location.href = '/booking'}>Book Discovery Call</Button>
+                    <div className="flex items-center gap-4">
+                        <Button size="sm" onClick={() => window.location.href = '/booking'}>Book Discovery Call</Button>
+                        <Button size="sm" variant="outline" onClick={() => window.location.href = '/faq'}>FAQ</Button>
+                    </div>
                 </div>
 
                 {/* Mobile Menu Button */}
