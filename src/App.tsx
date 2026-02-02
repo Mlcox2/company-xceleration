@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Elevate } from './pages/Elevate';
 import { Booking } from './pages/Booking';
-import { Booking } from './pages/Booking';
+
 
 function App() {
     return (
