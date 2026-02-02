@@ -46,7 +46,7 @@ export const Hero = () => {
                             Book A Free Discovery Call
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
-                        <Button variant="secondary" size="lg" onClick={() => window.location.href = '/elevate'}>
+                        <Button variant="secondary" size="lg" onClick={() => window.location.href = '/assessment'}>
                             Take Free Assessment
                         </Button>
                     </div>

@@ -54,10 +54,15 @@ export const Solution = () => {
                         <p className="text-xl text-text-secondary mb-8">
                             Stop guessing. Start executing with a proven operating system designed for 7 and 8-figure agencies.
                         </p>
-                        <Button size="lg" className="group" onClick={() => window.location.href = '/booking'}>
-                            Book A Free Discovery Call
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Button size="lg" className="group" onClick={() => window.location.href = '/booking'}>
+                                Book A Free Discovery Call
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                            <Button variant="outline" size="lg" onClick={() => window.location.href = '/assessment'}>
+                                Take Free Assessment
+                            </Button>
+                        </div>
                     </div>
 
                     <div className="space-y-6">
