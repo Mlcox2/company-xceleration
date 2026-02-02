@@ -182,9 +182,10 @@ export const Elevate = () => {
 
                         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             <PricingTier
-                                name="Foundation Tier"
+                                name="BLOOM Foundation Tier"
                                 price="$499/mo"
                                 target="Professionals starting out or seeking a strong base."
+                                link="https://buy.stripe.com/6oUeVf63ScSn19WghTaMU02"
                                 features={[
                                     "Access to a supportive community",
                                     "Expert coaching from seasoned leaders",
