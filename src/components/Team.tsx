@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
 import { TEAM_MEMBERS } from '../data/teamMembers';
 
-export const TeamMember = ({ name, role, image, delay, bio, shortBio }: { name: string, role: string, image: string, delay: number, bio?: string, shortBio?: string }) => (
+export const TeamMember = ({ name, role, image, delay, bio, shortBio, linkedin }: { name: string, role: string, image: string, delay: number, bio?: string, shortBio?: string, linkedin?: string }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,9 +14,11 @@ export const TeamMember = ({ name, role, image, delay, bio, shortBio }: { name: 
             <img src={image} alt={name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div className="flex gap-4">
-                    <a href="#" className="p-2 bg-white/20 hover:bg-white text-white hover:text-black rounded-lg backdrop-blur-sm transition-colors">
-                        <Linkedin size={20} />
-                    </a>
+                    {linkedin && (
+                        <a href={linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/20 hover:bg-white text-white hover:text-black rounded-lg backdrop-blur-sm transition-colors">
+                            <Linkedin size={20} />
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
