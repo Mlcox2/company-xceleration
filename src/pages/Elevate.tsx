@@ -184,7 +184,7 @@ export const Elevate = () => {
                         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             <PricingTier
                                 id="foundation"
-                                name="BLOOM Foundation Tier"
+                                name="Foundation Tier"
                                 price="$499/mo"
                                 target="Professionals starting out or seeking a strong base."
                                 link="https://buy.stripe.com/6oUeVf63ScSn19WghTaMU02"
@@ -197,7 +197,7 @@ export const Elevate = () => {
                             />
                             <PricingTier
                                 id="growth"
-                                name="BLOOM Growth System"
+                                name="Growth System"
                                 price="$1,499/mo"
                                 popular={true}
                                 target="Established practices ready to scale and refine operations."
@@ -212,7 +212,7 @@ export const Elevate = () => {
                             />
                             <PricingTier
                                 id="systems"
-                                name="BLOOM Growth System"
+                                name="Strategic System"
                                 price="$2,999/mo"
                                 note={`$8,999 Engagement Fee (One-time via ACH)\nMonthly Subscription starts after 90 days`}
                                 target="Advanced practices aiming for long-term strategic success."

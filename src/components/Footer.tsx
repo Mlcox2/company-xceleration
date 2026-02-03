@@ -24,9 +24,9 @@ export const Footer = () => {
                             <a href="/booking" className="hover:text-primary transition-colors">Schedule Appointment</a>
                             <div className="h-px bg-white/5 my-1" />
                             <p className="font-bold text-white text-xs uppercase tracking-wider mb-1">Our Programs</p>
-                            <a href="/elevate#foundation" className="hover:text-primary transition-colors">BLOOM Foundation Tier</a>
-                            <a href="/elevate#growth" className="hover:text-primary transition-colors">BLOOM Growth System</a>
-                            <a href="/elevate#systems" className="hover:text-primary transition-colors">BLOOM Strategic System</a>
+                            <a href="/elevate#foundation" className="hover:text-primary transition-colors">Foundation Tier</a>
+                            <a href="/elevate#growth" className="hover:text-primary transition-colors">Growth System</a>
+                            <a href="/elevate#systems" className="hover:text-primary transition-colors">Strategic System</a>
                             <div className="h-px bg-white/5 my-1" />
                             <a href="/faq" className="hover:text-primary transition-colors">Frequently Asked Questions</a>
                         </div>

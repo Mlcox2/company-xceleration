@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 export const SpeakersPage = () => {
     const handleBooking = (name?: string) => {
         const subject = name ? `Speaker Booking Request: ${name}` : 'General Speaker Booking Request';
-        window.location.href = `mailto:matthew@xcelteam.com?subject=${encodeURIComponent(subject)}`;
+        window.location.href = `mailto:matthew@xcel.team?subject=${encodeURIComponent(subject)}`;
     };
 
     return (
