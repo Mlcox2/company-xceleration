@@ -11,9 +11,9 @@ export const Home = () => {
             <Navbar />
             <main>
                 <Hero />
+                <Testimonials />
                 <PainPoints />
                 <Solution />
-                <Testimonials />
             </main>
             <Footer />
         </div>
