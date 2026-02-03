@@ -26,7 +26,7 @@ export default {
                 body: ['Roboto', 'sans-serif'],
             },
             animation: {
-                scroll: 'scroll 25s linear infinite',
+                scroll: 'scroll 60s linear infinite',
             },
             keyframes: {
                 scroll: {

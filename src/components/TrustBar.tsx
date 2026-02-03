@@ -5,9 +5,7 @@ export const TrustBar = () => {
         "/assets/logos/logo-1.png",
         "/assets/logos/logo-2.png",
         "/assets/logos/logo-3.png",
-        "/assets/logos/logo-1.png",
-        "/assets/logos/logo-2.png",
-        "/assets/logos/logo-3.png",
+        "/assets/logos/logo-4.jpg",
     ];
 
     // Ensure we have enough copies to cover wide screens
