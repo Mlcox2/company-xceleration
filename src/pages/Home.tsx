@@ -1,5 +1,6 @@
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
+import { TrustBar } from '../components/TrustBar';
 import { PainPoints } from '../components/PainPoints';
 import { Solution } from '../components/Solution';
 import { Testimonials } from '../components/Testimonials';
@@ -11,6 +12,7 @@ export const Home = () => {
             <Navbar />
             <main>
                 <Hero />
+                <TrustBar />
                 <Testimonials />
                 <PainPoints />
                 <Solution />
