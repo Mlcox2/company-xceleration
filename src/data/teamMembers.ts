@@ -71,5 +71,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
         role: "Fractional CEO | Specialist, Psychiatric Hospitals",
         image: "/assets/images/fractional-ceo.jpg",
         bio: "Bio coming soon."
+    },
+    {
+        name: "Name Coming Soon",
+        role: "Senior Consultant, Strategic Partner | S.N.H Consulting",
+        image: "/assets/images/snh-consultant.jpg",
+        bio: "Bio coming soon."
     }
 ];
