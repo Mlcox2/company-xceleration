@@ -47,5 +47,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
         role: "Billing Specialist",
         image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/nSmi03CFhTx89dc3EbIf/media/69596e2374830341e1df7454.jpeg",
         bio: "Tezia is the Billing and Auditing Specialist for Company Xcelerations with a focus on accuracy, compliance, and process improvement. She manages the billing process and reviews, audits, and financial documentation while collaborating closely with internal teams to support efficient and transparent consulting operations."
+    },
+    {
+        name: "Deepa Hasija MD",
+        role: "Child, Adolescent & Adult Psychiatrist",
+        image: "/assets/images/deepa-hasija.jpg",
+        bio: "Dr. Deepa Hasija has been treating and diagnosing children in the Las Vegas and Reno community for over 5 years. Dr Hasija is focused on treating children with depression, anxiety, ADHD, trauma, mood disorder, addiction. She also extends care to family members who are in need. She is a preferred psychiatrist for the foster care community.\n\nShe is the founder and owner of Satori Behavioral Health, is the Child and adolescent director of inpatient psychiatry, partial hospitalization program in a behavioral hospital, published author in Psychiatric Annals and published poet.\n\nShe received a certificate of commendation from Senator Harry Reid on her completion of the child and adolescent program from the University of Nevada."
     }
 ];

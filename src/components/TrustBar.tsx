@@ -8,22 +8,20 @@ export const TrustBar = () => {
         "/assets/logos/logo-4.jpg",
     ];
 
-    // Ensure we have enough copies to cover wide screens
-    // Loop 4 times to be safe
     const carouselLogos = [...logos, ...logos, ...logos, ...logos];
 
     return (
-        <section className="bg-background py-10 border-b border-white/5 relative z-20">
+        <section className="bg-slate-50 py-10 border-y border-slate-200 relative z-20">
             <div className="container mx-auto px-6 mb-8 text-center">
-                <p className="text-sm font-bold text-text-secondary uppercase tracking-widest">
+                <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">
                     Trusted by Leading Organizations
                 </p>
             </div>
 
             <div className="relative overflow-hidden w-full">
                 {/* Gradient Masks */}
-                <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-                <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+                <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
                 {/* Track */}
                 <div className="flex w-max animate-scroll hover:[animation-play-state:paused] items-center">
@@ -32,7 +30,7 @@ export const TrustBar = () => {
                             <img
                                 src={src}
                                 alt="Client Logo"
-                                className="w-full h-16 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                                className="w-full h-16 object-contain opacity-80 hover:opacity-100 transition-all duration-300 mix-blend-multiply"
                             />
                         </div>
                     ))}
