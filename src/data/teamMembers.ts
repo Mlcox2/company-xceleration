@@ -65,5 +65,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
         role: "Human Resources & Talent Acquisition Professional",
         image: "/assets/images/tammi-cox.jpg",
         bio: "Tammi Cox is an experienced Human Resources and Talent Acquisition professional with over five years of hands-on experience supporting growing organizations. She is also the co-owner of a staffing agency based in Las Vegas, where she helps businesses secure reliable talent and build strong teams.\n\nShe focuses on recruiting, onboarding, employee relations, and aligning staffing strategies with company goals. Tammi has helped companies improve hiring processes, reduce turnover, and place the right people in the right roles.\n\nShe works closely with leadership to identify staffing needs, streamline operations, and create clear expectations across teams. Her approach is practical and people-focused, with a strong emphasis on accountability, clear communication, and consistent follow-through."
+    },
+    {
+        name: "Name Coming Soon",
+        role: "Fractional CEO | Specialist, Psychiatric Hospitals",
+        image: "/assets/images/fractional-ceo.jpg",
+        bio: "Bio coming soon."
     }
 ];
