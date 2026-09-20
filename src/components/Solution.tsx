@@ -8,17 +8,17 @@ export const Solution = () => {
     const steps = [
         {
             title: "Clarify the Plan",
-            desc: "We walk with you to define your vision, set quarterly priorities, and align your leadership team around where you’re going and what matters now. Core tools: Growth Plan, Quarterlies, Weekly Focus.",
+            desc: "We walk with you to define your vision, set quarterly priorities, and align your leadership team around where you’re going and what matters now. Whether you're on Bloom Growth OS, EOS, Scaling Up, or a system you built yourselves, this is where it starts.",
             icon: Target
         },
         {
             title: "Align the Team",
-            desc: "We help your team shift from good intentions to shared ownership. Clear roles, consistent meetings, and leadership accountability become the new normal. Core tools: Team Roles, Weekly Meetings, Scorecards.",
+            desc: "We help your team shift from good intentions to shared ownership. Clear roles, consistent meetings, and leadership accountability become the new normal, inside whatever operating system you've already chosen.",
             icon: Users
         },
         {
             title: "Install Systems That Stick",
-            desc: "We don’t just give you a system — we guide you to build one your team actually follows. You walk away with weekly rhythm, team ownership, and real traction. Core tools: SOPs, KPIs, Quarterly Reviews, Accountability Systems.",
+            desc: "We don’t just hand you a system — we work alongside your team until it actually runs without us in the room. You walk away with weekly rhythm, real ownership, and traction that holds past the leadership meeting.",
             icon: Layout
         }
     ];
@@ -70,8 +70,11 @@ export const Solution = () => {
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white font-heading">
                             Here’s how our process works:
                         </h2>
-                        <p className="text-xl text-text-secondary mb-8">
-                            Stop guessing. Start executing with a proven operating system designed for 7 and 8-figure agencies.
+                        <p className="text-xl text-text-secondary mb-4">
+                            We're not consultants, we're system specialists. Already running Bloom Growth OS, EOS, or Scaling Up? We help your leadership team make it stick. Building your own system instead? We'll help you install one that actually runs.
+                        </p>
+                        <p className="text-lg text-text-secondary mb-8">
+                            Stop guessing. Start executing with an operating rhythm built for growing companies, generally 10 to 250 employees and $2M to $50M in revenue.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Button size="lg" className="group" onClick={() => window.location.href = '/booking'}>

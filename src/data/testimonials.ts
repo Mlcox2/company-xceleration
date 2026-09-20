@@ -5,37 +5,43 @@ export interface Testimonial {
     author: string;
     role?: string;
     company?: string;
+    /** Shown in the homepage carousel. All testimonials still appear on the full Testimonials page regardless of this flag. */
+    featured?: boolean;
 }
 
 export const TESTIMONIALS: Testimonial[] = [
-    {
-        id: "mihaela-h",
-        quote: "I've known Matt for several years, and I had the pleasure of working with him throughout my career as a Licensed Clinical Social Worker. He is very relatable, knowledgeable, passionate about helping and uplifting our community, educating other social workers, teachers and Mental Health professionals too. His story is very inspirational, and his leadership is motivational. Highly recommend his expertise!",
-        author: "Mihaela H",
-        role: "Licensed Clinical Social Worker/Therapist"
-    },
     {
         id: "kyle-d-1",
         quote: "Leadership engagement increased substantially and resulted in 100% retention. This allowed us to focus on service line expansion and market diversification, yielding a 30% increase in revenue in just 4 months.",
         author: "Kyle D",
         role: "Behavioral Health CEO",
-        company: "Oceans Behavioral Hospital Permian Basin"
+        company: "Oceans Behavioral Hospital Permian Basin",
+        featured: true
     },
     {
         id: "annika-r",
         quote: "We have skyrocketed our team's relationship and synergy. We went from meeting around 15-20% of our total quarterly goals to over 80%.",
         author: "Annika R",
-        company: "NAMI Southern Nevada"
+        company: "NAMI Southern Nevada",
+        featured: true
+    },
+    {
+        id: "mihaela-h",
+        quote: "I've known Matt for several years, and I had the pleasure of working with him throughout my career as a Licensed Clinical Social Worker. He is very relatable, knowledgeable, passionate about helping and uplifting our community, educating other social workers, teachers and Mental Health professionals too. His story is very inspirational, and his leadership is motivational. Highly recommend his expertise!",
+        author: "Mihaela H",
+        role: "Licensed Clinical Social Worker/Therapist",
+        featured: true
+    },
+    {
+        id: "isaiah-n",
+        quote: "I highly recommend Matthew. He is an amazing Coach and facilitator. His clients constantly rave about the value that they get from being a part of the journey that he takes them on.",
+        author: "Isaiah N.",
+        featured: true
     },
     {
         id: "trent-c",
         quote: "Matthew Cox has a calm demeanor, yet is fiercely intent on creating value for his clients. Matthew has a 'must see' TEDx Talk and really shows his passion for alternative learning... I only surround myself with winners, and Matthew Cox is one of those folks!",
         author: "Trent C."
-    },
-    {
-        id: "isaiah-n",
-        quote: "I highly recommend Matthew. He is an amazing Coach and facilitator. His clients constantly rave about the value that they get from being a part of the journey that he takes them on.",
-        author: "Isaiah N."
     },
     {
         id: "kyle-dunlap",

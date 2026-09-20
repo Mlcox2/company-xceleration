@@ -14,7 +14,7 @@ export const FAQS = [
     },
     {
         question: "What systems do you use?",
-        answer: "We are system-agnostic. We help organizations implement and optimize systems such as:\n• Bloom Growth System\n• EOS-style operating frameworks\n• Custom leadership and accountability systems\n\nOur focus isn’t the brand of the system, it’s whether your team can actually run it."
+        answer: "We are framework-agnostic. We help organizations implement and optimize systems such as:\n• Bloom Growth OS\n• EOS\n• Scaling Up\n• Custom leadership and accountability systems\n\nOur focus isn’t the brand of the system, it’s whether your team can actually run it."
     },
     {
         question: "What makes Company Xceleration different?",

@@ -37,24 +37,24 @@ export const ResourcesPage = () => {
                             <div className="h-64 bg-gradient-to-br from-blue-900 to-slate-900 relative flex items-center justify-center p-8">
                                 <BookOpen className="text-white/20 w-32 h-32 absolute rotate-12" />
                                 <div className="z-10 text-center">
-                                    <h3 className="text-3xl font-bold text-white font-heading mb-2">Courage to Learn</h3>
+                                    <h3 className="text-3xl font-bold text-white font-heading mb-2">The Hidden Operating System</h3>
                                     <p className="text-white/80">by Matthew Cox</p>
                                 </div>
                             </div>
                             <div className="p-8 flex flex-col flex-grow">
                                 <div className="flex items-center gap-2 text-primary uppercase tracking-wider text-sm font-bold mb-4">
                                     <BookOpen size={16} />
-                                    <span>Featured Book</span>
+                                    <span>Coming Soon</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-4">Unlocking Potential and Growth</h3>
+                                <h3 className="text-2xl font-bold text-white mb-4">Why implementations stall after leadership says yes</h3>
                                 <p className="text-text-secondary leading-relaxed mb-8 flex-grow">
-                                    Discover the principles of learning and leadership that have helped countless organizations scale. This book provides a roadmap for personal and professional development, drawing on decades of experience in high-stakes environments.
+                                    Every company has a visible operating system, the goals, meetings, and scorecards, and a hidden one underneath it made of habits, fear, and resistance to change. This book is for leadership teams who adopted a system, felt the momentum in the boardroom, and then watched it stall everywhere else. Framework-neutral: it works whether you run Bloom Growth OS, EOS, Scaling Up, or your own system.
                                 </p>
                                 <Button
                                     fullWidth
-                                    onClick={() => window.open('https://courage-to-learn-platform.vercel.app/', '_blank')}
+                                    onClick={() => window.location.href = 'mailto:matthew@xcel.team?subject=' + encodeURIComponent('Notify me: The Hidden Operating System')}
                                 >
-                                    Get the Book <ExternalLink className="ml-2 w-4 h-4" />
+                                    Get Notified When It Launches <ExternalLink className="ml-2 w-4 h-4" />
                                 </Button>
                             </div>
                         </motion.div>

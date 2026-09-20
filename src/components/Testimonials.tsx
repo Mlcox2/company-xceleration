@@ -7,6 +7,11 @@ import { TESTIMONIALS } from '../data/testimonials';
 export const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Homepage shows a curated, non-repetitive set. Falls back to the full list
+    // if nothing is marked featured, so the carousel never ends up empty.
+    const featured = TESTIMONIALS.filter((t) => t.featured);
+    const items = featured.length > 0 ? featured : TESTIMONIALS;
+
     // Auto-rotate every 6 seconds
     useEffect(() => {
         const timer = setInterval(() => {
@@ -16,14 +21,14 @@ export const Testimonials = () => {
     }, [currentIndex]);
 
     const handleNext = () => {
-        setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+        setCurrentIndex((prev) => (prev + 1) % items.length);
     };
 
     const handlePrev = () => {
-        setCurrentIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+        setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
     };
 
-    const current = TESTIMONIALS[currentIndex];
+    const current = items[currentIndex];
 
     return (
         <section className="py-24 bg-background border-t border-white/5 relative overflow-hidden">
@@ -87,7 +92,7 @@ export const Testimonials = () => {
 
                     {/* Dots */}
                     <div className="flex justify-center gap-2 mt-8">
-                        {TESTIMONIALS.map((_, idx) => (
+                        {items.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
