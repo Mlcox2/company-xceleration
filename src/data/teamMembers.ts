@@ -8,6 +8,12 @@ export interface TeamMember {
     linkedin?: string;
 }
 
+export const LEAD_SYSTEM_SPECIALISTS = [
+    "Matthew Cox, MPA, HonD",
+    "Dan Cox",
+    "Kim Riggs",
+] as const;
+
 export const TEAM_MEMBERS: TeamMember[] = [
     {
         name: "Matthew Cox, MPA, HonD",

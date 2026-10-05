@@ -2,7 +2,9 @@
 import { motion } from 'framer-motion';
 import { Button } from './Button';
 import { Target, Users, Layout, ArrowRight } from 'lucide-react';
-import { TEAM_MEMBERS } from '../data/teamMembers';
+import { TEAM_MEMBERS, LEAD_SYSTEM_SPECIALISTS } from '../data/teamMembers';
+
+const leadSystemSpecialists = TEAM_MEMBERS.filter((member) => LEAD_SYSTEM_SPECIALISTS.includes(member.name as typeof LEAD_SYSTEM_SPECIALISTS[number]));
 
 export const Solution = () => {
     const steps = [
@@ -30,11 +32,11 @@ export const Solution = () => {
                 {/* Team Section - Grid with links */}
                 <div className="mb-32">
                     <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-16 font-heading">
-                        Meet Our Experts
+                        Lead System Specialists
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        {TEAM_MEMBERS.map((member, index) => (
+                        {leadSystemSpecialists.map((member, index) => (
                             <motion.div
                                 key={member.name}
                                 initial={{ opacity: 0, y: 20 }}

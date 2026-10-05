@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
-import { TEAM_MEMBERS } from '../data/teamMembers';
+import { TEAM_MEMBERS, LEAD_SYSTEM_SPECIALISTS } from '../data/teamMembers';
+
+const leadSystemSpecialists = TEAM_MEMBERS.filter((member) => LEAD_SYSTEM_SPECIALISTS.includes(member.name as typeof LEAD_SYSTEM_SPECIALISTS[number]));
+const scalingPartners = TEAM_MEMBERS.filter((member) => !LEAD_SYSTEM_SPECIALISTS.includes(member.name as typeof LEAD_SYSTEM_SPECIALISTS[number]));
 
 export const TeamMember = ({ name, role, image, delay, bio, shortBio, linkedin }: { name: string, role: string, image: string, delay: number, bio?: string, shortBio?: string, linkedin?: string }) => (
     <motion.div
@@ -35,14 +38,29 @@ export const Team = () => {
         <section id="team" className="py-24 bg-background">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-white">Meet Your Scaling Partners</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-white">Lead System Specialists</h2>
                     <p className="text-xl text-text-secondary max-w-2xl mx-auto">
                         We aren't just coaches. We are operators who have built, scaled, and exited companies.
                     </p>
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center mb-20">
+                    {leadSystemSpecialists.map((member, index) => (
+                        <div key={member.name} className="w-full">
+                            <TeamMember
+                                {...member}
+                                delay={0.1 * (index + 1)}
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-white">Scaling Partners</h2>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
-                    {TEAM_MEMBERS.map((member, index) => (
+                    {scalingPartners.map((member, index) => (
                         <div key={member.name} className="w-full">
                             <TeamMember
                                 {...member}
