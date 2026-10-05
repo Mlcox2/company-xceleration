@@ -68,7 +68,7 @@ export const TeamPage = () => {
 
                 <section className="container mx-auto px-6 pb-24">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white font-heading">Scaling Partners</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white font-heading">Meet Our Scaling Partners</h2>
                     </div>
 
                     <div className="max-w-4xl mx-auto space-y-16">
