@@ -34,7 +34,7 @@ export const Hero = () => {
                     </div>
 
                     <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white font-heading">
-                        Build a Business That Runs With <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-primary-dark">Structure</span> — Not Stress
+                        Your Business Runs on a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-primary-dark">Hidden Operating System</span>. Most Leaders Never See It.
                     </h1>
 
                     <p className="text-xl text-text-secondary mb-8 leading-relaxed max-w-lg font-body">

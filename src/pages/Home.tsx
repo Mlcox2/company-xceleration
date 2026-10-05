@@ -3,8 +3,11 @@ import { Hero } from '../components/Hero';
 import { TrustBar } from '../components/TrustBar';
 import { PainPoints } from '../components/PainPoints';
 import { Solution } from '../components/Solution';
+import { Book } from '../components/Book';
+import { Offers } from '../components/Offers';
 import { Testimonials } from '../components/Testimonials';
 import { Team } from '../components/Team';
+import { FinalCTA } from '../components/FinalCTA';
 import { Footer } from '../components/Footer';
 
 export const Home = () => {
@@ -14,10 +17,13 @@ export const Home = () => {
 			<main>
 				<Hero />
 				<TrustBar />
-				<Testimonials />
 				<PainPoints />
 				<Solution />
+				<Book />
+				<Offers />
+				<Testimonials />
 				<Team />
+				<FinalCTA />
 			</main>
 			<Footer />
 		</div>
