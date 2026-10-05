@@ -2,9 +2,6 @@
 import { motion } from 'framer-motion';
 import { Button } from './Button';
 import { Target, Users, Layout, ArrowRight } from 'lucide-react';
-import { TEAM_MEMBERS, LEAD_SYSTEM_SPECIALISTS } from '../data/teamMembers';
-
-const leadSystemSpecialists = TEAM_MEMBERS.filter((member) => LEAD_SYSTEM_SPECIALISTS.includes(member.name as typeof LEAD_SYSTEM_SPECIALISTS[number]));
 
 export const Solution = () => {
     const steps = [
@@ -28,43 +25,6 @@ export const Solution = () => {
     return (
         <section id="process" className="py-24 bg-background-card border-y border-white/5">
             <div className="container mx-auto px-6">
-
-                {/* Team Section - Grid with links */}
-                <div className="mb-32">
-                    <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-16 font-heading">
-                        Lead System Specialists
-                    </h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        {leadSystemSpecialists.map((member, index) => (
-                            <motion.div
-                                key={member.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="group bg-background border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-all text-center"
-                            >
-                                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                                <p className="text-primary font-medium text-sm mb-6 uppercase tracking-wider">{member.role}</p>
-
-                                <a
-                                    href="/team"
-                                    className="inline-flex items-center text-text-secondary hover:text-white transition-colors text-sm font-medium"
-                                >
-                                    View Full Bio <ArrowRight className="ml-1 w-4 h-4" />
-                                </a>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
 
                 {/* Our Process Section */}
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
