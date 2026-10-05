@@ -18,7 +18,7 @@ export const TeamPage = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading"
+                        className="text-4xl md:text-6xl font-bold text-navy mb-6 font-heading"
                     >
                         Lead System Specialists
                     </motion.h1>
@@ -36,7 +36,7 @@ export const TeamPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="flex flex-col md:flex-row gap-8 items-start bg-background-card/50 border border-white/5 p-8 rounded-2xl"
+                                className="flex flex-col md:flex-row gap-8 items-start bg-white border border-slate-200 p-8 rounded-2xl shadow-sm"
                             >
                                 <div className="w-full md:w-1/3 shrink-0">
                                     <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-white/10 shadow-lg">
@@ -55,7 +55,7 @@ export const TeamPage = () => {
                                     </div>
                                 </div>
                                 <div className="w-full md:w-2/3">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{member.name}</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-navy mb-2">{member.name}</h2>
                                     <p className="text-primary font-medium mb-6 uppercase tracking-wider text-sm">{member.role}</p>
                                     <div className="text-text-secondary leading-relaxed whitespace-pre-wrap text-lg">
                                         {member.bio}
@@ -68,7 +68,7 @@ export const TeamPage = () => {
 
                 <section className="container mx-auto px-6 pb-24">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white font-heading">Meet Our Scaling Partners</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-navy font-heading">Meet Our Scaling Partners</h2>
                     </div>
 
                     <div className="max-w-4xl mx-auto space-y-16">
@@ -79,7 +79,7 @@ export const TeamPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="flex flex-col md:flex-row gap-8 items-start bg-background-card/50 border border-white/5 p-8 rounded-2xl"
+                                className="flex flex-col md:flex-row gap-8 items-start bg-white border border-slate-200 p-8 rounded-2xl shadow-sm"
                             >
                                 <div className="w-full md:w-1/3 shrink-0">
                                     <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-white/10 shadow-lg">
@@ -98,7 +98,7 @@ export const TeamPage = () => {
                                     </div>
                                 </div>
                                 <div className="w-full md:w-2/3">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{member.name}</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-navy mb-2">{member.name}</h2>
                                     <p className="text-primary font-medium mb-6 uppercase tracking-wider text-sm">{member.role}</p>
                                     <div className="text-text-secondary leading-relaxed whitespace-pre-wrap text-lg">
                                         {member.bio}

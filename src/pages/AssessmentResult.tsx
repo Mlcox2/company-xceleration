@@ -50,7 +50,7 @@ export const AssessmentResult = () => {
     }, [location, navigate]);
 
     if (!resultData) {
-        return <div className="min-h-screen bg-background flex items-center justify-center text-white">Loading...</div>;
+        return <div className="min-h-screen bg-background flex items-center justify-center text-navy">Loading...</div>;
     }
 
     const constructEmailLink = () => {
@@ -85,7 +85,7 @@ I would like to discuss next steps.
                             resultData.temperature === 'Warm' ? '⚠️ Growth Potential' : '🌱 Foundation Building'}
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 font-heading leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-8 font-heading leading-tight">
                         {resultData.headline}
                     </h1>
 
@@ -93,12 +93,12 @@ I would like to discuss next steps.
                         {resultData.frustration}
                     </p>
 
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm max-w-3xl mx-auto">
-                        <h3 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                    <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm max-w-3xl mx-auto">
+                        <h3 className="text-2xl font-bold text-navy mb-4 flex items-center justify-center gap-3">
                             <Target className="text-primary" />
                             Your Path Forward
                         </h3>
-                        <p className="text-lg text-white/90">
+                        <p className="text-lg text-text-secondary">
                             {resultData.result}
                         </p>
                     </div>
@@ -112,13 +112,13 @@ I would like to discuss next steps.
                     {/* Left Column: Diagnostics */}
                     <div className="space-y-12">
                         <section>
-                            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <h3 className="text-2xl font-bold text-navy mb-6 flex items-center gap-3">
                                 <AlertTriangle className="text-orange-500" />
                                 What's Holding You Back
                             </h3>
                             <ul className="space-y-4">
                                 {resultData.problems.slice(0, 5).map((item: string, idx: number) => (
-                                    <li key={idx} className="bg-background-card border border-white/5 p-4 rounded-lg text-text-secondary flex gap-3 items-start">
+                                    <li key={idx} className="bg-white border border-slate-200 p-4 rounded-lg text-text-secondary flex gap-3 items-start shadow-sm">
                                         <span className="text-orange-500 mt-1">•</span>
                                         {item}
                                     </li>
@@ -127,13 +127,13 @@ I would like to discuss next steps.
                         </section>
 
                         <section>
-                            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <h3 className="text-2xl font-bold text-navy mb-6 flex items-center gap-3">
                                 <HelpCircle className="text-blue-400" />
                                 Critical Questions to Ask
                             </h3>
                             <ul className="space-y-4">
                                 {resultData.questions.slice(0, 5).map((item: string, idx: number) => (
-                                    <li key={idx} className="bg-background-card border border-white/5 p-4 rounded-lg text-text-secondary flex gap-3 items-start">
+                                    <li key={idx} className="bg-white border border-slate-200 p-4 rounded-lg text-text-secondary flex gap-3 items-start shadow-sm">
                                         <span className="text-blue-400 mt-1">?</span>
                                         {item}
                                     </li>
@@ -144,8 +144,8 @@ I would like to discuss next steps.
 
                     {/* Right Column: Solutions & CTA */}
                     <div className="space-y-12 h-fit lg:sticky lg:top-32">
-                        <section className="bg-gradient-to-br from-background-card to-background rounded-3xl p-8 border border-white/10 shadow-2xl">
-                            <h3 className="text-3xl font-bold text-white mb-6">Take Action Now</h3>
+                        <section className="bg-white rounded-3xl p-8 border border-slate-200 shadow-[0_20px_40px_rgba(15,23,42,0.06)]">
+                            <h3 className="text-3xl font-bold text-navy mb-6">Take Action Now</h3>
 
                             <div className="space-y-6 mb-8">
                                 <p className="text-text-secondary">
@@ -153,7 +153,7 @@ I would like to discuss next steps.
                                 </p>
 
                                 <div className="space-y-3">
-                                    <h4 className="font-semibold text-white">We can help you:</h4>
+                                    <h4 className="font-semibold text-navy">We can help you:</h4>
                                     {resultData.desires.slice(0, 3).map((item: string, idx: number) => (
                                         <div key={idx} className="flex gap-2 items-start text-sm text-text-secondary">
                                             <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" />
@@ -178,7 +178,7 @@ I would like to discuss next steps.
                                     <div className="absolute inset-0 flex items-center">
                                         <div className="w-full border-t border-white/10"></div>
                                     </div>
-                                    <span className="relative bg-background-card px-2 text-sm text-text-secondary">OR</span>
+                                    <span className="relative bg-white px-2 text-sm text-text-secondary">OR</span>
                                 </div>
 
                                 <Button

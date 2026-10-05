@@ -7,12 +7,9 @@ import { TESTIMONIALS } from '../data/testimonials';
 export const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Homepage shows a curated, non-repetitive set. Falls back to the full list
-    // if nothing is marked featured, so the carousel never ends up empty.
     const featured = TESTIMONIALS.filter((t) => t.featured);
     const items = featured.length > 0 ? featured : TESTIMONIALS;
 
-    // Auto-rotate every 6 seconds
     useEffect(() => {
         const timer = setInterval(() => {
             handleNext();
@@ -31,12 +28,12 @@ export const Testimonials = () => {
     const current = items[currentIndex];
 
     return (
-        <section className="py-24 bg-background border-t border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-primary/5 skew-y-3 transform origin-top-left scale-110 opactiy-50" />
+        <section className="py-24 bg-background border-t border-slate-200 relative overflow-hidden">
+            <div className="absolute inset-0 bg-primary/5 skew-y-3 transform origin-top-left scale-110 opacity-50" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-heading">
+                    <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 font-heading">
                         Client Success
                     </h2>
                     <p className="text-xl text-text-secondary max-w-2xl mx-auto">
@@ -45,8 +42,8 @@ export const Testimonials = () => {
                 </div>
 
                 <div className="max-w-4xl mx-auto relative">
-                    <div className="bg-background-card/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 shadow-xl relative min-h-[300px] flex flex-col justify-center">
-                        <Quote className="absolute top-8 right-8 text-primary/10 w-16 h-16 rotate-180" />
+                    <div className="bg-white border border-slate-200 shadow-sm p-8 md:p-12 rounded-2xl relative min-h-[300px] flex flex-col justify-center">
+                        <Quote className="absolute top-8 right-8 text-accent/10 w-16 h-16 rotate-180" />
 
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -59,45 +56,42 @@ export const Testimonials = () => {
                             >
                                 <div className="flex justify-center gap-1 mb-6">
                                     {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
+                                        <Star key={i} className="w-5 h-5 text-accent fill-current" />
                                     ))}
                                 </div>
                                 <p className="text-xl md:text-2xl text-text-secondary text-center mb-10 leading-relaxed font-light italic">
                                     "{current.quote}"
                                 </p>
                                 <div className="flex flex-col items-center">
-                                    <div className="font-bold text-white text-lg">{current.author}</div>
+                                    <div className="font-bold text-navy text-lg">{current.author}</div>
                                     {current.role && <div className="text-primary">{current.role}</div>}
                                     {current.company && <div className="text-sm text-text-secondary mt-1">{current.company}</div>}
                                 </div>
                             </motion.div>
                         </AnimatePresence>
 
-                        {/* Controls */}
                         <div className="flex justify-between absolute top-1/2 -translate-y-1/2 left-0 right-0 w-full px-2 md:-mx-16 pointer-events-none">
                             <button
                                 onClick={handlePrev}
-                                className="pointer-events-auto p-3 rounded-full bg-background border border-white/10 text-white hover:bg-primary hover:border-primary transition-all shadow-lg transform hover:scale-110"
+                                className="pointer-events-auto p-3 rounded-full bg-white border border-slate-200 text-navy hover:bg-primary hover:border-primary hover:text-white transition-all shadow-lg transform hover:scale-110"
                             >
                                 <ChevronLeft size={24} />
                             </button>
                             <button
                                 onClick={handleNext}
-                                className="pointer-events-auto p-3 rounded-full bg-background border border-white/10 text-white hover:bg-primary hover:border-primary transition-all shadow-lg transform hover:scale-110"
+                                className="pointer-events-auto p-3 rounded-full bg-white border border-slate-200 text-navy hover:bg-primary hover:border-primary hover:text-white transition-all shadow-lg transform hover:scale-110"
                             >
                                 <ChevronRight size={24} />
                             </button>
                         </div>
                     </div>
 
-                    {/* Dots */}
                     <div className="flex justify-center gap-2 mt-8">
                         {items.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
-                                className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'bg-primary w-6' : 'bg-white/20 hover:bg-white/40'
-                                    }`}
+                                className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'bg-primary w-6' : 'bg-slate-300 hover:bg-slate-400'}`}
                             />
                         ))}
                     </div>

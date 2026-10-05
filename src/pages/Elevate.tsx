@@ -19,13 +19,13 @@ interface TierProps {
 }
 
 const PricingTier = ({ name, price, target, features, popular, note, link, id }: TierProps) => (
-    <div id={id} className={`relative p-8 rounded-2xl border ${popular ? 'border-primary bg-primary/5' : 'border-white/10 bg-background-card'} flex flex-col h-full scroll-mt-32`}>
+    <div id={id} className={`relative p-8 rounded-2xl border ${popular ? 'border-primary bg-primary/5' : 'border-slate-200 bg-white'} flex flex-col h-full scroll-mt-32`}>
         {popular && (
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
                 MOST POPULAR
             </div>
         )}
-        <h3 className="text-2xl font-bold text-white mb-2">{name}</h3>
+        <h3 className="text-2xl font-bold text-navy mb-2">{name}</h3>
         <div className="text-4xl font-bold text-primary mb-2">{price}</div>
         {note && <p className="text-xs text-text-secondary mb-4 italic whitespace-pre-line">{note}</p>}
         <p className="text-text-secondary mb-6">{target}</p>
@@ -48,12 +48,12 @@ const PricingTier = ({ name, price, target, features, popular, note, link, id }:
 );
 
 const Testimonial = ({ quote, author }: { quote: string, author?: string }) => (
-    <div className="p-6 rounded-xl bg-background-card border border-white/5 italic text-text-secondary relative">
+    <div className="p-6 rounded-xl bg-white border border-slate-200 italic text-text-secondary relative shadow-sm">
         <span className="absolute -top-3 -left-3 bg-primary rounded-full p-2">
             <Star className="w-4 h-4 text-white fill-current" />
         </span>
         "{quote}"
-        {author && <div className="mt-4 text-sm font-bold text-white not-italic">- {author}</div>}
+        {author && <div className="mt-4 text-sm font-bold text-navy not-italic">- {author}</div>}
     </div>
 );
 
@@ -74,7 +74,7 @@ export const Elevate = () => {
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading"
+                            className="text-4xl md:text-6xl font-bold text-navy mb-6 font-heading"
                         >
                             Build Your Practice, Help More People and <span className="text-primary">Recover Lost Money</span>
                         </motion.h1>
@@ -124,9 +124,9 @@ export const Elevate = () => {
                 </section>
 
                 {/* Pain Points */}
-                <section className="py-20 bg-background-card/50">
+                <section className="py-20 bg-slate-50">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-3xl font-bold text-center text-white mb-16">Are You Tired of Facing These Challenges Alone?</h2>
+                        <h2 className="text-3xl font-bold text-center text-navy mb-16">Are You Tired of Facing These Challenges Alone?</h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <Testimonial quote="I feel like I'm drowning in paperwork and insurance claims..." />
                             <Testimonial quote="It's beyond frustrating to spend countless hours on billing, only to have claims denied..." />
@@ -140,23 +140,23 @@ export const Elevate = () => {
                 {/* Conversion / Questions */}
                 <section className="py-20 bg-background">
                     <div className="container mx-auto px-6 max-w-4xl text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-12">Ready for a Change?</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-navy mb-12">Ready for a Change?</h2>
                         <div className="space-y-8 text-left">
-                            <div className="flex gap-4 items-start p-6 rounded-xl bg-background-card border border-white/5">
+                            <div className="flex gap-4 items-start p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
                                 <div className="bg-red-500/10 p-3 rounded-lg text-red-500">
                                     <X size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Losing Money?</h3>
+                                    <h3 className="text-xl font-bold text-navy mb-2">Losing Money?</h3>
                                     <p className="text-text-secondary">Are you losing money because insurance won’t pay and won't provide clear instructions on how to solve it?</p>
                                 </div>
                             </div>
-                            <div className="flex gap-4 items-start p-6 rounded-xl bg-background-card border border-white/5">
+                            <div className="flex gap-4 items-start p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
                                 <div className="bg-red-500/10 p-3 rounded-lg text-red-500">
                                     <X size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Too Busy?</h3>
+                                    <h3 className="text-xl font-bold text-navy mb-2">Too Busy?</h3>
                                     <p className="text-text-secondary">Is running your practice making you too busy to care for your patients?</p>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@ export const Elevate = () => {
                                     <Check size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">The Solution</h3>
+                                    <h3 className="text-xl font-bold text-navy mb-2">The Solution</h3>
                                     <p className="text-text-secondary">What if you could grow your practice and still take great care of your patients without feeling more stressed?</p>
                                 </div>
                             </div>
@@ -174,9 +174,9 @@ export const Elevate = () => {
                 </section>
 
                 {/* Pricing */}
-                <section id="pricing" className="py-20 bg-background-card border-y border-white/5 scroll-mt-24">
+                <section id="pricing" className="py-20 bg-white border-y border-slate-200 scroll-mt-24">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-6">Choose Your Path</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-navy text-center mb-6">Choose Your Path</h2>
                         <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16">
                             Scalable solutions designed for your practice's specific needs.
                         </p>
@@ -233,7 +233,7 @@ export const Elevate = () => {
                 <section className="py-20 bg-background">
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-white">Who Are We?</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-navy">Who Are We?</h2>
                             <p className="text-xl text-text-secondary max-w-2xl mx-auto">
                                 We are a team of specialists dedicated to your growth.
                             </p>
@@ -253,10 +253,10 @@ export const Elevate = () => {
                 {/* Urgency Footer */}
                 <section className="py-20 bg-gradient-to-br from-background to-primary/10">
                     <div className="container mx-auto px-6 text-center">
-                        <h2 className="text-3xl font-bold text-white mb-8">Don't Wait Until It's Too Late</h2>
+                        <h2 className="text-3xl font-bold text-navy mb-8">Don't Wait Until It's Too Late</h2>
                         <div className="max-w-2xl mx-auto text-text-secondary mb-12 space-y-4">
                             <p>Every day you wait is money lost in denied claims and operational chaos.</p>
-                            <p className="text-white font-medium">Stop the bleeding. Start the healing.</p>
+                            <p className="text-navy font-medium">Stop the bleeding. Start the healing.</p>
                         </div>
                         <Button size="lg" className="text-lg px-12" onClick={() => window.location.href = '/booking'}>
                             Join The Elevate Program

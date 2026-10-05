@@ -26,11 +26,11 @@ export const PainPoints = () => {
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
+        <section className="py-24 bg-navy relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="max-w-3xl mx-auto text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-white">Still doing too much in your business?</h2>
-                    <p className="text-xl text-text-secondary">It’s not a work ethic problem. It’s a structure problem.</p>
+                    <p className="text-xl text-slate-300">It’s not a work ethic problem. It’s a structure problem.</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
@@ -41,13 +41,13 @@ export const PainPoints = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="p-8 rounded-2xl bg-background-card border border-white/5 hover:border-primary/50 transition-colors group"
+                            className="p-8 rounded-2xl bg-navy-card border border-slate-700 hover:border-accent/50 transition-colors group"
                         >
-                            <div className="w-14 h-14 rounded-xl bg-background flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-white/10">
-                                <pain.icon className="w-7 h-7 text-primary" />
+                            <div className="w-14 h-14 rounded-xl bg-[#1d2b4d] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-slate-600">
+                                <pain.icon className="w-7 h-7 text-accent" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-white">{pain.title}</h3>
-                            <p className="text-text-secondary leading-relaxed">{pain.desc}</p>
+                            <p className="text-slate-300 leading-relaxed">{pain.desc}</p>
                         </motion.div>
                     ))}
                 </div>

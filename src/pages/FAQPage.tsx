@@ -18,7 +18,7 @@ export const FAQPage = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading"
+                        className="text-4xl md:text-6xl font-bold text-navy mb-6 font-heading"
                     >
                         Frequently Asked Questions
                     </motion.h1>
@@ -36,13 +36,13 @@ export const FAQPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.05 }}
-                                className="bg-background-card border border-white/5 rounded-2xl overflow-hidden"
+                                className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm"
                             >
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                     className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
                                 >
-                                    <span className="text-lg font-bold text-white pr-8">{faq.question}</span>
+                                    <span className="text-lg font-bold text-navy pr-8">{faq.question}</span>
                                     {openIndex === index ? (
                                         <Minus className="text-primary shrink-0" />
                                     ) : (
@@ -57,7 +57,7 @@ export const FAQPage = () => {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3 }}
                                         >
-                                            <div className="px-6 pb-6 text-text-secondary leading-relaxed whitespace-pre-line border-t border-white/5 pt-4">
+                                            <div className="px-6 pb-6 text-text-secondary leading-relaxed whitespace-pre-line border-t border-slate-200 pt-4">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>

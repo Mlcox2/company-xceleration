@@ -22,7 +22,7 @@ export const Booking = () => {
             <Navbar />
             <main className="pt-32 pb-20 container mx-auto px-6">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl font-bold text-white text-center mb-8 font-heading">Schedule Your Discovery Call</h1>
+                    <h1 className="text-4xl font-bold text-navy text-center mb-8 font-heading">Schedule Your Discovery Call</h1>
                     <div
                         className="calendly-inline-widget w-full rounded-lg overflow-hidden"
                         data-url="https://calendly.com/matthew-xcel/30min"

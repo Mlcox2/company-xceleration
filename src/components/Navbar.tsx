@@ -25,10 +25,10 @@ export const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-[0_8px_30px_rgba(15,23,42,0.08)] py-4' : 'bg-background/80 backdrop-blur-sm py-6'}`}>
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <a href="/" className="flex items-center gap-2">
-                    <img src="/assets/images/logo.png" alt="Xcel Team" className="h-10 w-auto" />
+                    <img src="/assets/images/logo-dark.png" alt="Xcel Team" className="h-10 w-auto" />
                 </a>
 
                 {/* Desktop Nav */}
@@ -37,7 +37,7 @@ export const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-white/80 hover:text-white font-medium transition-colors"
+                            className="text-navy/80 hover:text-navy font-medium transition-colors"
                         >
                             {link.name}
                         </a>
@@ -50,7 +50,7 @@ export const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white"
+                    className="md:hidden text-navy"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X /> : <Menu />}
@@ -64,14 +64,14 @@ export const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-background border-t border-white/10"
+                        className="md:hidden bg-background border-t border-slate-200"
                     >
                         <div className="flex flex-col p-6 space-y-4">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-white/80 hover:text-white font-medium py-2"
+                                    className="text-navy/80 hover:text-navy font-medium py-2"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {link.name}

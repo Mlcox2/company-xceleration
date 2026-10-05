@@ -27,10 +27,10 @@ export const Offers = () => {
     ];
 
     return (
-        <section id="offers" className="py-24 bg-background-card border-y border-white/5">
+        <section id="offers" className="py-24 bg-background border-y border-slate-200">
             <div className="container mx-auto px-6">
                 <div className="max-w-3xl mx-auto text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-white">Three ways to work with us</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-navy">Three ways to work with us</h2>
                     <p className="text-xl text-text-secondary">Start where your business is. Every path begins with a free discovery call.</p>
                 </div>
 
@@ -42,18 +42,18 @@ export const Offers = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="p-8 rounded-2xl bg-background border border-white/5 hover:border-primary/50 transition-colors group flex flex-col"
+                            className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-primary/50 transition-colors group flex flex-col"
                         >
-                            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <offer.icon className="w-7 h-7 text-primary" />
+                            <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <offer.icon className="w-7 h-7 text-accent" />
                             </div>
-                            <h3 className="text-xl font-bold mb-3 text-white">{offer.title}</h3>
+                            <h3 className="text-xl font-bold mb-3 text-navy">{offer.title}</h3>
                             <p className="text-text-secondary leading-relaxed mb-6 flex-grow">{offer.desc}</p>
                             <a
                                 href={offer.href}
-                                className="inline-flex items-center text-primary hover:text-primary-light transition-colors font-semibold"
+                                className="inline-flex items-center text-primary hover:text-primary-dark transition-colors font-semibold"
                             >
-                                {offer.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                                {offer.cta} <ArrowRight className="ml-2 w-4 h-4 text-accent" />
                             </a>
                         </motion.div>
                     ))}

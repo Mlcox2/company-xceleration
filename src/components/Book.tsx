@@ -15,14 +15,14 @@ export const Book = () => {
                         className="flex justify-center"
                     >
                         <div className="relative">
-                            <div className="absolute -inset-6 bg-blue-600/20 rounded-3xl blur-3xl" />
-                            <div className="relative w-64 md:w-72 aspect-[2/3] rounded-r-xl rounded-l-md bg-gradient-to-br from-blue-800 via-blue-900 to-slate-950 border border-white/10 shadow-2xl flex flex-col justify-between p-8">
-                                <div className="text-blue-200 text-xs font-bold tracking-[0.25em] uppercase">Coming Soon</div>
+                            <div className="absolute -inset-6 bg-primary/10 rounded-3xl blur-3xl" />
+                            <div className="relative w-64 md:w-72 aspect-[2/3] rounded-r-xl rounded-l-md bg-gradient-to-br from-primary-dark via-primary to-navy border border-slate-200 shadow-2xl flex flex-col justify-between p-8">
+                                <div className="text-blue-100 text-xs font-bold tracking-[0.25em] uppercase">Coming Soon</div>
                                 <div>
                                     <div className="text-white font-heading font-bold text-3xl leading-tight mb-3">The Hidden Operating System</div>
-                                    <div className="text-blue-200/80 text-sm leading-relaxed">Why human behavior, not software, runs your company</div>
+                                    <div className="text-blue-100/80 text-sm leading-relaxed">Why human behavior, not software, runs your company</div>
                                 </div>
-                                <div className="text-blue-100 text-sm font-semibold tracking-wide">Matthew Cox &amp; Dan Cox</div>
+                                <div className="text-blue-50 text-sm font-semibold tracking-wide">Matthew Cox &amp; Dan Cox</div>
                                 <div className="absolute left-0 top-0 bottom-0 w-2 bg-white/10 rounded-l-md" />
                             </div>
                         </div>
@@ -32,7 +32,7 @@ export const Book = () => {
                         <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6">
                             <span className="font-semibold text-sm tracking-wide uppercase">The Book</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white font-heading">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-navy font-heading">
                             The Hidden Operating System
                         </h2>
                         <p className="text-xl text-text-secondary mb-4 leading-relaxed">

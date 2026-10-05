@@ -21,7 +21,7 @@ export const SpeakersPage = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading"
+                        className="text-4xl md:text-6xl font-bold text-navy mb-6 font-heading"
                     >
                         Book Our Speakers
                     </motion.h1>
@@ -43,7 +43,7 @@ export const SpeakersPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-background-card border border-white/5 p-6 rounded-2xl flex flex-col group hover:border-primary/30 transition-colors"
+                                className="bg-white border border-slate-200 p-6 rounded-2xl flex flex-col group hover:border-primary/30 transition-colors shadow-sm"
                             >
                                 <div className="relative aspect-square mb-6 rounded-xl overflow-hidden border border-white/10">
                                     <img
@@ -56,7 +56,7 @@ export const SpeakersPage = () => {
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+                                <h3 className="text-xl font-bold text-navy mb-2">{member.name}</h3>
                                 <p className="text-primary font-medium text-sm mb-4 uppercase tracking-wider">{member.role}</p>
 
                                 <p className="text-text-secondary text-sm leading-relaxed mb-6 line-clamp-4 flex-grow">
@@ -72,7 +72,7 @@ export const SpeakersPage = () => {
                 </section>
 
                 <section className="container mx-auto px-6 mb-24 text-center bg-white/5 rounded-3xl p-12">
-                    <h2 className="text-3xl font-bold text-white mb-4">Ready to elevate your event?</h2>
+                    <h2 className="text-3xl font-bold text-navy mb-4">Ready to elevate your event?</h2>
                     <p className="text-text-secondary mb-8 max-w-xl mx-auto">
                         Contact us directly to discuss availability, topics, and how we can add value to your audience.
                     </p>

@@ -23,13 +23,13 @@ export const Solution = () => {
     ];
 
     return (
-        <section id="process" className="py-24 bg-background-card border-y border-white/5">
+        <section id="process" className="py-24 bg-background border-y border-slate-200">
             <div className="container mx-auto px-6">
 
                 {/* Our Process Section */}
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white font-heading">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-navy font-heading">
                             Here’s how our process works:
                         </h2>
                         <p className="text-xl text-text-secondary mb-4">
@@ -57,13 +57,13 @@ export const Solution = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.2 }}
-                                className="flex items-start gap-6 p-6 rounded-xl bg-background border border-white/5 hover:border-primary/30 transition-colors"
+                                className="flex items-start gap-6 p-6 rounded-xl bg-white border border-slate-200 hover:border-primary/30 transition-colors shadow-sm"
                             >
                                 <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                                     <step.icon size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
+                                    <h3 className="text-xl font-bold mb-2 text-navy">{step.title}</h3>
                                     <p className="text-text-secondary leading-relaxed">{step.desc}</p>
                                 </div>
                             </motion.div>

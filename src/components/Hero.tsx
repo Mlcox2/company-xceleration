@@ -9,20 +9,8 @@ export const Hero = () => {
     const openVideo = () => setIsVideoModalOpen(true);
     const closeVideo = () => setIsVideoModalOpen(false);
 
-
-
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#000d23]">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
-                <img
-                    src="/assets/images/hero-bg.png"
-                    alt="Background"
-                    className="w-full h-full object-cover opacity-60 mix-blend-overlay"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#000d23]/80 via-[#000d23]/60 to-[#000d23]" />
-            </div>
-
+        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background">
             <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -33,8 +21,8 @@ export const Hero = () => {
                         <span className="font-semibold text-sm tracking-wide uppercase">Operational Freedom & Scale</span>
                     </div>
 
-                    <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white font-heading">
-                        Your Business Runs on a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-primary-dark">Hidden Operating System</span>. Most Leaders Never See It.
+                    <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-navy font-heading">
+                        Your Business Runs on a <span className="text-primary">Hidden Operating System</span>. Most Leaders Never See It.
                     </h1>
 
                     <p className="text-xl text-text-secondary mb-8 leading-relaxed max-w-lg font-body">

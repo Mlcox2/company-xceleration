@@ -16,7 +16,7 @@ export const TestimonialsPage = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading"
+                        className="text-4xl md:text-6xl font-bold text-navy mb-6 font-heading"
                     >
                         Client Success Stories
                     </motion.h1>
@@ -34,7 +34,7 @@ export const TestimonialsPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="bg-background-card p-8 rounded-2xl border border-white/5 mb-8 break-inside-avoid relative group hover:border-primary/30 transition-colors"
+                                className="bg-white p-8 rounded-2xl border border-slate-200 mb-8 break-inside-avoid relative group hover:border-primary/30 transition-colors shadow-sm"
                             >
                                 <Quote className="absolute top-6 right-6 text-primary/10 w-10 h-10 rotate-180" />
 
@@ -49,7 +49,7 @@ export const TestimonialsPage = () => {
                                 </p>
 
                                 <div className="border-t border-white/5 pt-4">
-                                    <div className="font-bold text-white text-lg">{t.author}</div>
+                                    <div className="font-bold text-navy text-lg">{t.author}</div>
                                     {t.role && <div className="text-sm text-primary">{t.role}</div>}
                                     {t.company && <div className="text-sm text-text-secondary italic">{t.company}</div>}
                                 </div>

@@ -8,17 +8,26 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    light: '#fb923c', // keep orange accent
-                    DEFAULT: '#f97316',
-                    dark: '#c2410c',
+                    light: '#2E5BD7',
+                    DEFAULT: '#1740B2',
+                    dark: '#0F2F8A',
+                },
+                accent: {
+                    light: '#F8A35C',
+                    DEFAULT: '#F48120',
+                    dark: '#C2410C',
                 },
                 background: {
-                    DEFAULT: '#000d23', // Extracted exact dark blue/black
-                    card: '#0a1930', // Slightly lighter for cards
+                    DEFAULT: '#FAFAF8',
+                    card: '#FFFFFF',
+                },
+                navy: {
+                    DEFAULT: '#0C1631',
+                    card: '#132040',
                 },
                 text: {
-                    primary: '#ffffff',
-                    secondary: '#94a3b8',
+                    primary: '#0C1631',
+                    secondary: '#475569',
                 }
             },
             fontFamily: {

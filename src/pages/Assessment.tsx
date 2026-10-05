@@ -95,7 +95,7 @@ export const Assessment = () => {
                             <span>Question {currentStep + 1} of {surveyQuestions.length}</span>
                             <span>{Math.round(progress)}% Complete</span>
                         </div>
-                        <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                        <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                             <motion.div
                                 className="h-full bg-primary"
                                 initial={{ width: 0 }}
@@ -113,19 +113,19 @@ export const Assessment = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -20 }}
                                 transition={{ duration: 0.3 }}
-                                className="bg-background-card border border-white/5 rounded-2xl p-8 md:p-12 shadow-2xl relative"
+                                className="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-[0_20px_40px_rgba(15,23,42,0.06)] relative"
                             >
                                 {/* Back Button */}
                                 {currentStep > 0 && (
                                     <button
                                         onClick={handlePrev}
-                                        className="absolute top-8 left-8 text-text-secondary hover:text-white transition-colors"
+                                        className="absolute top-8 left-8 text-text-secondary hover:text-navy transition-colors"
                                     >
                                         <ChevronLeft size={24} />
                                     </button>
                                 )}
 
-                                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 font-heading mt-6">
+                                <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8 font-heading mt-6">
                                     {currentQuestion.question}
                                 </h2>
 
@@ -136,8 +136,8 @@ export const Assessment = () => {
                                             onClick={() => handleOptionSelect(option.text)}
                                             className={`w-full text-left p-6 rounded-xl border transition-all duration-200 flex items-center justify-between group
                                                 ${answers[currentQuestion.id] === option.text
-                                                    ? 'bg-primary/20 border-primary text-white shadow-[0_0_15px_rgba(249,115,22,0.3)]'
-                                                    : 'bg-white/5 border-white/10 text-text-secondary hover:bg-white/10 hover:border-white/20 hover:text-white'
+                                                    ? 'bg-primary/10 border-primary text-navy shadow-[0_0_0_1px_rgba(23,64,178,0.1)]'
+                                                    : 'bg-slate-50 border-slate-200 text-text-secondary hover:bg-white hover:border-primary/30 hover:text-navy'
                                                 }
                                             `}
                                         >
@@ -157,7 +157,7 @@ export const Assessment = () => {
                                 className="text-center py-20"
                             >
                                 <div className="w-24 h-24 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-8" />
-                                <h2 className="text-3xl font-bold text-white mb-4">Analyzing Your Results...</h2>
+                                <h2 className="text-3xl font-bold text-navy mb-4">Analyzing Your Results...</h2>
                                 <p className="text-text-secondary text-xl">Identifying your best path to growth.</p>
                             </motion.div>
                         )}

@@ -15,7 +15,7 @@ export const ResourcesPage = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading"
+                        className="text-4xl md:text-6xl font-bold text-navy mb-6 font-heading"
                     >
                         Books & Courses
                     </motion.h1>
@@ -32,7 +32,7 @@ export const ResourcesPage = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-background-card border border-white/5 rounded-3xl overflow-hidden flex flex-col group hover:border-primary/30 transition-all"
+                            className="bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col group hover:border-primary/30 transition-all shadow-sm"
                         >
                             <div className="h-64 bg-gradient-to-br from-blue-900 to-slate-900 relative flex items-center justify-center p-8">
                                 <BookOpen className="text-white/20 w-32 h-32 absolute rotate-12" />
@@ -46,7 +46,7 @@ export const ResourcesPage = () => {
                                     <BookOpen size={16} />
                                     <span>Coming Soon</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-4">Why implementations stall after leadership says yes</h3>
+                                <h3 className="text-2xl font-bold text-navy mb-4">Why implementations stall after leadership says yes</h3>
                                 <p className="text-text-secondary leading-relaxed mb-8 flex-grow">
                                     Every company has a visible operating system, the goals, meetings, and scorecards, and a hidden one underneath it made of habits, fear, and resistance to change. This book is for leadership teams who adopted a system, felt the momentum in the boardroom, and then watched it stall everywhere else. Framework-neutral: it works whether you run Bloom Growth OS, EOS, Scaling Up, or your own system.
                                 </p>
@@ -65,7 +65,7 @@ export const ResourcesPage = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="bg-background-card border border-white/5 rounded-3xl overflow-hidden flex flex-col group hover:border-primary/30 transition-all"
+                            className="bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col group hover:border-primary/30 transition-all shadow-sm"
                         >
                             <div className="h-64 bg-gradient-to-br from-emerald-900 to-slate-900 relative flex items-center justify-center p-8">
                                 <MonitorPlay className="text-white/20 w-32 h-32 absolute -rotate-6" />
@@ -79,7 +79,7 @@ export const ResourcesPage = () => {
                                     <MonitorPlay size={16} />
                                     <span>Online Course</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-4">Technical Skills for Scale</h3>
+                                <h3 className="text-2xl font-bold text-navy mb-4">Technical Skills for Scale</h3>
                                 <p className="text-text-secondary leading-relaxed mb-8 flex-grow">
                                     A comprehensive deep-dive into the critical systems of insurance and Medicaid billing. Designed for Community Health Workers and agency leaders looking to optimize their revenue cycle and compliance.
                                 </p>
@@ -98,7 +98,7 @@ export const ResourcesPage = () => {
 
                 <section className="container mx-auto px-6 mb-24 text-center">
                     <p className="text-text-secondary mb-6">Looking for custom training for your team?</p>
-                    <a href="/booking" className="text-primary hover:text-white transition-colors font-medium inline-flex items-center">
+                    <a href="/booking" className="text-primary hover:text-primary-dark transition-colors font-medium inline-flex items-center">
                         Book a consultation <ArrowRight className="ml-2 w-4 h-4" />
                     </a>
                 </section>

@@ -1,7 +1,7 @@
 import { motion, type HTMLMotionProps } from 'framer-motion';
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
-    variant?: 'primary' | 'secondary' | 'outline';
+    variant?: 'primary' | 'secondary' | 'outline' | 'inverse';
     size?: 'sm' | 'md' | 'lg';
     fullWidth?: boolean;
 }
@@ -18,8 +18,9 @@ export const Button: React.FC<ButtonProps> = ({
 
     const variants = {
         primary: "bg-primary hover:bg-primary-dark text-white focus:ring-primary shadow-lg shadow-primary/20",
-        secondary: "bg-background-card hover:bg-slate-700 text-white focus:ring-slate-500",
-        outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white"
+        secondary: "bg-navy hover:bg-navy-card text-white focus:ring-navy",
+        outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white bg-white",
+        inverse: "border-2 border-white text-white hover:bg-white hover:text-navy bg-transparent"
     };
 
     const sizes = {
