@@ -37,12 +37,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
         linkedin: "https://www.linkedin.com/in/kim-riggs-935baa3a4"
     },
     {
-        name: "Kirsten Carl",
-        role: "Implementation Specialist",
-        image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/nSmi03CFhTx89dc3EbIf/media/69596cec748303ba11df3c3a.jpeg",
-        bio: "Kirsten Carl is a systems-driven operations and strategy leader with deep experience helping organizations stabilize, scale, and operate with clarity. She specializes in translating complex, high-risk environments into practical structures that improve execution, accountability, and sustainability. Known for her ability to see both the macro strategy and the operational details, Kirsten partners with leadership teams to untangle inefficiencies, build durable systems, and support growth without sacrificing integrity or people."
-    },
-    {
         name: "Martezia S Lambson",
         role: "Billing Specialist",
         image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/nSmi03CFhTx89dc3EbIf/media/69596e2374830341e1df7454.jpeg",
