@@ -1,5 +1,7 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { trackPageView } from './lib/hubspot';
 import { AnimatePresence } from 'framer-motion';
 import { Home } from './pages/Home';
 import { Elevate } from './pages/Elevate';
@@ -14,9 +16,23 @@ import { Assessment } from './pages/Assessment';
 import { AssessmentResult } from './pages/AssessmentResult';
 import { assessmentResults } from './data/assessmentContent';
 
+function HubSpotRouteTracker() {
+    const location = useLocation();
+    const firstLoad = useRef(true);
+    useEffect(() => {
+        if (firstLoad.current) {
+            firstLoad.current = false;
+            return;
+        }
+        trackPageView(location.pathname + location.search);
+    }, [location.pathname, location.search]);
+    return null;
+}
+
 function App() {
     return (
         <Router>
+            <HubSpotRouteTracker />
             <AnimatePresence mode="wait">
                 <Routes>
                     <Route path="/" element={<Home />} />

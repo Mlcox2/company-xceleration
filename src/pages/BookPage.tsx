@@ -4,6 +4,7 @@ import { ArrowRight, Briefcase, Users, Compass, CheckCircle2 } from 'lucide-reac
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Button } from '../components/Button';
+import { identifyContact } from '../lib/hubspot';
 
 const AUDIENCES = [
     {
@@ -26,7 +27,8 @@ const AUDIENCES = [
 const ROLES = ['CEO or owner', 'Operator or manager', 'Implementation coach', 'Other'];
 
 export const BookPage = () => {
-    const [name, setName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [role, setRole] = useState(ROLES[0]);
     const [error, setError] = useState('');
@@ -34,8 +36,8 @@ export const BookPage = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!name.trim()) {
-            setError('Enter your name.');
+        if (!firstName.trim()) {
+            setError('Enter your first name.');
             return;
         }
         if (!/^\S+@\S+\.\S+$/.test(email.trim())) {
@@ -43,10 +45,13 @@ export const BookPage = () => {
             return;
         }
         setError('');
-        const subject = 'Pre-order: The Hidden Operating System';
-        const body = `Please add me to the pre-order list for The Hidden Operating System.\n\nName: ${name.trim()}\nEmail: ${email.trim()}\nRole: ${role}`;
-        window.location.href = `mailto:matthew@xcel.team?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        setSubmitted(true);
+        identifyContact({
+            email: email.trim(),
+            firstname: firstName.trim(),
+            lastname: lastName.trim(),
+            jobtitle: role,
+        });
+        window.setTimeout(() => setSubmitted(true), 400);
     };
 
     return (
@@ -90,39 +95,56 @@ export const BookPage = () => {
                                 <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex gap-4 items-start">
                                     <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                                     <div>
-                                        <p className="font-bold text-navy mb-1">One last step</p>
+                                        <p className="font-bold text-navy mb-1">You're on the list</p>
                                         <p className="text-text-secondary">
-                                            Your email app should have opened with your details filled in. Hit send and you're on the list.
+                                            Thanks, {firstName.trim()}. We'll email you the moment The Hidden Operating System is available.
                                         </p>
                                     </div>
                                 </div>
                             ) : (
-                                <form onSubmit={handleSubmit} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4" noValidate>
+                                <form onSubmit={handleSubmit} id="book-preorder-form" name="book-preorder" className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4" noValidate>
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         <label className="block">
-                                            <span className="block text-sm font-medium text-navy mb-1">Name</span>
+                                            <span className="block text-sm font-medium text-navy mb-1">First name</span>
                                             <input
                                                 type="text"
-                                                value={name}
-                                                onChange={(e) => { setName(e.target.value); setError(''); }}
-                                                placeholder="Jordan Lee"
+                                                name="firstname"
+                                                autoComplete="given-name"
+                                                value={firstName}
+                                                onChange={(e) => { setFirstName(e.target.value); setError(''); }}
+                                                placeholder="Jordan"
                                                 className="w-full h-11 px-4 rounded-lg border border-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                                             />
                                         </label>
                                         <label className="block">
-                                            <span className="block text-sm font-medium text-navy mb-1">Email</span>
+                                            <span className="block text-sm font-medium text-navy mb-1">Last name</span>
                                             <input
-                                                type="email"
-                                                value={email}
-                                                onChange={(e) => { setEmail(e.target.value); setError(''); }}
-                                                placeholder="jordan@company.com"
+                                                type="text"
+                                                name="lastname"
+                                                autoComplete="family-name"
+                                                value={lastName}
+                                                onChange={(e) => setLastName(e.target.value)}
+                                                placeholder="Lee"
                                                 className="w-full h-11 px-4 rounded-lg border border-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                                             />
                                         </label>
                                     </div>
                                     <label className="block">
+                                        <span className="block text-sm font-medium text-navy mb-1">Email</span>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            autoComplete="email"
+                                            value={email}
+                                            onChange={(e) => { setEmail(e.target.value); setError(''); }}
+                                            placeholder="jordan@company.com"
+                                            className="w-full h-11 px-4 rounded-lg border border-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                                        />
+                                    </label>
+                                    <label className="block">
                                         <span className="block text-sm font-medium text-navy mb-1">I'm a</span>
                                         <select
+                                            name="jobtitle"
                                             value={role}
                                             onChange={(e) => setRole(e.target.value)}
                                             className="w-full h-11 px-4 rounded-lg border border-slate-300 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
