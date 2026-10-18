@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/quiz",
+      "destination": "/quiz.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
