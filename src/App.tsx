@@ -13,6 +13,7 @@ import { ResourcesPage } from './pages/ResourcesPage';
 import { FAQPage } from './pages/FAQPage';
 import { BookPage } from './pages/BookPage';
 import { PrivacyPage } from './pages/PrivacyPage';
+import { FeedbackPage } from './pages/FeedbackPage';
 import { Assessment } from './pages/Assessment';
 import { AssessmentResult } from './pages/AssessmentResult';
 import { assessmentResults } from './data/assessmentContent';
@@ -47,6 +48,7 @@ function App() {
                     <Route path="/faq" element={<FAQPage />} />
                     <Route path="/book" element={<BookPage />} />
                     <Route path="/privacy" element={<PrivacyPage />} />
+                    <Route path="/feedback" element={<FeedbackPage />} />
 
                     {/* Assessment Routes */}
                     <Route path="/assessment" element={<Assessment />} />
