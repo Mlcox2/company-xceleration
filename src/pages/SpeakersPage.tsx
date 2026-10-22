@@ -6,6 +6,9 @@ import { Button } from '../components/Button';
 import { Mail, Mic } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+const SPEAKER_NAMES = ['Matthew Cox, MPA, HonD', 'Dan Cox', 'Kim Riggs'];
+const SPEAKERS = TEAM_MEMBERS.filter((member) => SPEAKER_NAMES.includes(member.name));
+
 export const SpeakersPage = () => {
     const handleBooking = (name?: string) => {
         const subject = name ? `Speaker Booking Request: ${name}` : 'General Speaker Booking Request';
@@ -36,7 +39,7 @@ export const SpeakersPage = () => {
 
                 <section className="container mx-auto px-6 mb-24">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        {TEAM_MEMBERS.map((member, index) => (
+                        {SPEAKERS.map((member, index) => (
                             <motion.div
                                 key={member.name}
                                 initial={{ opacity: 0, y: 20 }}
